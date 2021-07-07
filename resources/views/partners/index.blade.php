@@ -13,7 +13,9 @@
 		    </h1>
 		    
 		    
-		    <h1>Image = <? if{{ $partner->partner_image }} ?? null ?></h1>
+		    <?php foreach (json_decode($partner->partner_filename)as $picture) { ?>
+                 <img src="{{ asset('/partner_images/'.$picture) }}" style="height:120px; width:200px"/>
+         	<?php } ?>
 		    
 		    <h1>Name = {{ $partner->partner_name }}</h1>
 		    

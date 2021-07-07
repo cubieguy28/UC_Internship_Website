@@ -34,16 +34,10 @@ Route::put('/partners/{partner}', 'PartnerController@update');
 Route::delete('/partners/{partner}', 'PartnerController@destroy');
 
 //TESTIMONIAL
-
-
 Route::get('/testimonials', 'TestimonialController@index');
-
 Route::get('/testimonials/create', 'TestimonialController@create');
 Route::get('/testimonials/{testimonial}', 'TestimonialController@show');
-
 Route::post('/testimonials', 'TestimonialController@store');
-// Route::post('/testimonials', 'TestimonialController@imageStore');
-
 Route::get('/testimonials/{testimonial}/edit', 'TestimonialController@edit');
 Route::put('/testimonials/{testimonial}', 'TestimonialController@update');
 Route::delete('/testimonials/{testimonial}', 'TestimonialController@destroy');

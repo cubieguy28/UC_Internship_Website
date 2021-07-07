@@ -17,7 +17,7 @@
 
 		</form>
 	
-		<?php foreach (json_decode($testimonial->filename)as $picture) { ?>
+		<?php foreach (json_decode($testimonial->testimonial_filename)as $picture) { ?>
                  <img src="{{ asset('/testimonial_images/'.$picture) }}" style="height:120px; width:200px"/>
          	<?php } ?>
 

@@ -18,6 +18,7 @@ class CreateAdvisersTable extends Migration
             $table->string('adviser_fname');
             $table->string('adviser_lname');
             $table->string('adviser_designation');
+            $table->string('adviser_filename');
 
             $table->timestamps();
             

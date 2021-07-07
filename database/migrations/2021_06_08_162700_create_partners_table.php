@@ -22,6 +22,7 @@ class CreatePartnersTable extends Migration
             $table->string('partner_email');
             $table->string('partner_mobile_number');
             $table->string('partner_landline_number');
+            $table->string('partner_filename');
 
             $table->timestamps();
         });

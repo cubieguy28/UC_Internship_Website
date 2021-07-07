@@ -9,5 +9,11 @@ class Adviser extends Model
 {
     use HasFactory;
 
-    protected $table = 'advisers';
+    protected $fillable = [
+        'adviser_fname',
+        'adviser_lname',
+        'adviser_designation',
+        'adviser_filename',
+
+    ];
 }

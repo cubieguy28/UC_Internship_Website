@@ -33,13 +33,19 @@ class TestimonialController extends Controller
                 'testimonial_lname' => 'required',
                 'testimonial_title' => 'required',
                 'testimonial_testimony' => 'required',
-                'filename' => 'required',
-                'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
+                'testimonial_filename' => 'required',
+                'testimonial_filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
         ]);
 
-        if($request->hasfile('filename'))
+        $Upload_model = new Testimonial;
+        $Upload_model->testimonial_fname = $request->input('testimonial_fname');
+        $Upload_model->testimonial_lname = $request->input('testimonial_lname');
+        $Upload_model->testimonial_title = $request->input('testimonial_title');
+        $Upload_model->testimonial_testimony = $request->input('testimonial_testimony');
+
+        if($request->hasfile('testimonial_filename'))
         {
-            foreach($request->file('filename') as $image)
+            foreach($request->file('testimonial_filename') as $image)
             {
                 $name=$image->hashName();
                 $image->move('testimonial_images/', $name);  // your folder path
@@ -47,12 +53,7 @@ class TestimonialController extends Controller
             }
         }
         
-        $Upload_model = new Testimonial;
-        $Upload_model->testimonial_fname = $request->input('testimonial_fname');
-        $Upload_model->testimonial_lname = $request->input('testimonial_lname');
-        $Upload_model->testimonial_title = $request->input('testimonial_title');
-        $Upload_model->testimonial_testimony = $request->input('testimonial_testimony');
-        $Upload_model->filename = json_encode($data);
+        $Upload_model->testimonial_filename = json_encode($data);
         $Upload_model->save();
 
         return redirect('/testimonials');
@@ -71,8 +72,8 @@ class TestimonialController extends Controller
                 'testimonial_lname' => 'required',
                 'testimonial_title' => 'required',
                 'testimonial_testimony' => 'required',
-                'filename' => 'required',
-                'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
+                'testimonial_filename' => 'required',
+                'testimonial_filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
         ]);
 
         $Upload_model = Testimonial::find($testimonial->id);
@@ -81,21 +82,19 @@ class TestimonialController extends Controller
         $Upload_model->testimonial_title = $request->input('testimonial_title');
         $Upload_model->testimonial_testimony = $request->input('testimonial_testimony');
 
-        if($request->hasfile('filename'))
+        if($request->hasfile('testimonial_filename'))
         {
 
             
-            foreach (json_decode($Upload_model->filename, true) as $image) {
+            foreach (json_decode($Upload_model->testimonial_filename, true) as $image) {
 
             $destination = 'testimonial_images/'.$image;
             if(File::exists($destination)){
             File::delete($destination);
-            }else{
-            dd('File does not exists.');
             }
             }
             
-            foreach($request->file('filename') as $image)
+            foreach($request->file('testimonial_filename') as $image)
             {
                 $name=$image->hashName();
                 $image->move('testimonial_images/', $name);  // your folder path
@@ -103,7 +102,7 @@ class TestimonialController extends Controller
             }
         }
         
-        $Upload_model->filename = json_encode($data);
+        $Upload_model->testimonial_filename = json_encode($data);
         $Upload_model->update();
         
         return redirect('/testimonials');
@@ -114,13 +113,11 @@ class TestimonialController extends Controller
     {
         $Upload_model = Testimonial::find($testimonial->id);
 
-        foreach (json_decode($Upload_model->filename, true) as $image) {
+        foreach (json_decode($Upload_model->testimonial_filename, true) as $image) {
 
             $destination = 'testimonial_images/'.$image;
             if(File::exists($destination)){
             File::delete($destination);
-            }else{
-            dd('File does not exists.');
             }
         }
         

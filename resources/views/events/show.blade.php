@@ -17,7 +17,9 @@
 
 		</form>
 	
-			<h1>Image = <? if{{ $event->event_image }} ?? null ?></h1>
+			<?php foreach (json_decode($event->event_filename)as $picture) { ?>
+                 <img src="{{ asset('/event_images/'.$picture) }}" style="height:120px; width:200px"/>
+         	<?php } ?>
 		    
 		    <h1>Event Name = {{ $event->event_name }}</h1>
 		    

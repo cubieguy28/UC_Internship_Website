@@ -9,5 +9,15 @@ class Partner extends Model
 {
     use HasFactory;
 
-    protected $table = 'partners';
+    protected $fillable = [
+        'partner_name',
+        'partner_description',
+        'partner_contact_person_fname',
+        'partner_contact_person_lname',
+        'partner_email',
+        'partner_mobile_number',
+        'partner_landline_number',
+        'partner_filename',
+        
+    ];
 }

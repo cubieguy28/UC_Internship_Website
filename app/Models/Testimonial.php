@@ -14,6 +14,6 @@ class Testimonial extends Model
         'testimonial_lname',
         'testimonial_title',
         'testimonial_testimony',
-        'filename',
+        'testimonial_filename',
     ];
 }

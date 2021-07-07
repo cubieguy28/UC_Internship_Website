@@ -13,11 +13,11 @@
 				<button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">DELETE
 					
 				</button>
-			
-
 		</form>
 	
-		<h1>Image = <? if{{ $adviser->adviser_image }} ?? null ?></h1>
+		<?php foreach (json_decode($adviser->adviser_filename)as $picture) { ?>
+                 <img src="{{ asset('/adviser_images/'.$picture) }}" style="height:120px; width:200px"/>
+     	<?php } ?>
 		    
 	    <h1>First Name = {{ $adviser->adviser_fname }}</h1>
 	    

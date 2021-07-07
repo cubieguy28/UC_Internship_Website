@@ -13,7 +13,9 @@
 		    </h1>
 		    
 		    
-		    <h1>Image = <? if{{ $adviser->adviser_image }} ?? null ?></h1>
+		    <?php foreach (json_decode($adviser->adviser_filename)as $picture) { ?>
+                 <img src="{{ asset('/adviser_images/'.$picture) }}" style="height:120px; width:200px"/>
+         	<?php } ?>
 		    
 		    <h1>First Name = {{ $adviser->adviser_fname }}</h1>
 		    

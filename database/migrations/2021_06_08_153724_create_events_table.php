@@ -23,6 +23,7 @@ class CreateEventsTable extends Migration
             $table->string('event_category');
             $table->time('event_time');
             $table->integer('event_participant');
+            $table->string('event_filename');
 
 
             $table->timestamps();
