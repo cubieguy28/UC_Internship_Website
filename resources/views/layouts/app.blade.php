@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slideshow.css') }}">
@@ -11,6 +12,7 @@
 	<title>University of the Cordilleras</title>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 </head>
 <body class="bg-gray-200 flex flex-col min-h-screen" style="font-family: Verdana;" >
 
@@ -108,6 +110,7 @@
     </footer>
 
     <script type="text/javascript" src="{{ asset('js/slideshow.js') }}"></script>
+
     <script type="text/javascript">
     $(document).ready(function() {
       $(".btn-success").click(function(){ 
@@ -118,6 +121,29 @@
           $(this).parents(".control-group").remove();
       });
     });
-</script>
+    </script>
+
+    <script type="text/javascript">
+        $('.delete-confirm').click(function(e) {
+              var form =  $(this).closest("form");
+              var name = $(this).data("name");
+              e.preventDefault();
+              swal({
+                  title: `Are you sure you want to delete this data?`,
+                  text: "If you delete this, it will be gone forever.",
+                  icon: "warning",
+                  buttons: true,
+                  dangerMode: true,
+              })
+              .then((willDelete) => {
+                if (willDelete) {
+                  form.submit();
+                }
+              });
+          });
+
+    </script>
+
+    
 </body>
 </html>

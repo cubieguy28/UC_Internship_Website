@@ -7,42 +7,43 @@
 			<div class="w-full max-w-xs">
 
 			  <form action="/events" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" enctype="multipart/form-data">
-			  	@include('layouts.errors')
+			  	<!-- @include('layouts.errors') -->
 				@csrf
 
 			    <div class="mb-4">
 			      <label class="block text-gray-700 text-sm font-bold mb-2" for="event_name">
 			        Event Name
 			      </label>
-			      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="event_name" name="event_name" type="text" placeholder="Name">
+			      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="event_name" name="event_name" type="text" placeholder="Name" required>
 			    </div>
 
 			    <div class="mb-4">
 			      <label class="block text-gray-700 text-sm font-bold mb-2" for="event_description">
 			        Event Description
 			      </label>
-			      <textarea class="shadow appearance-none border rounded w-full py-5 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="event_description" name="event_description"></textarea>
+			      <textarea class="shadow appearance-none border rounded w-full py-5 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="event_description" name="event_description" required placeholder="Write event description here..."></textarea>
 			    </div>
 
 			    <div class="mb-4">
 			      <label class="block text-gray-700 text-sm font-bold mb-2" for="event_speaker_fname">
 			        Event Speaker First Name
 			      </label>
-			      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="event_speaker_fname" name="event_speaker_fname" type="text" placeholder="Event Speaker First Name">
+			      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="event_speaker_fname" name="event_speaker_fname" type="text" placeholder="Event Speaker First Name" required>
 			    </div>
 
 				<div class="mb-4">
 			      <label class="block text-gray-700 text-sm font-bold mb-2" for="event_speaker_lname">
 			        Event Speaker Last Name
 			      </label>
-			      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="event_speaker_lname" name="event_speaker_lname" type="text" placeholder="Event Speaker Last Name">
+			      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="event_speaker_lname" name="event_speaker_lname" type="text" placeholder="Event Speaker Last Name" required>
 			    </div>
 
 			    <div class="mb-4">
 			      <label class="block text-gray-700 text-sm font-bold mb-2" for="event_category">
 			        Event Category
 			      </label>
-			      <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="event_category" name="event_category">
+			      <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="event_category" name="event_category" required>
+			      	<option class="py-1" disabled selected value>Select an option</option>
 			      	<option class="py-1">Company Visits</option>
 				    <option class="py-1">Interviews</option>
 				    <option class="py-1">Meetings</option>
@@ -56,22 +57,22 @@
 
 			    <div class="mb-4">
 			    	<label class="block text-gray-700 text-sm font-bold mb-2" for="event_date">Event Date</label>
-  					<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="date" id="event_date" name="event_date">
+  					<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="date" id="event_date" name="event_date" required>
 			    </div>
 
 			    <div class="mb-4">
 			    	<label class="block text-gray-700 text-sm font-bold mb-2" for="event_time">Event Time</label>
-  					<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="time" id="event_time" name="event_time">
+  					<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="time" id="event_time" name="event_time" required>
 			    </div>
 
 			    <div class="mb-4">
 			    	<label class="block text-gray-700 text-sm font-bold mb-2" for="event_participant">Event Participants</label>
-  					<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" id="event_participant" name="event_participant">
+  					<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" id="event_participant" name="event_participant" required>
 			    </div>
 
 			    <div class="mb-4">
 			    	<label class="block text-gray-700 text-sm font-bold mb-2" for="event_filename">Choose your image</label>
-			    	<input type="file" class="w-full text-gray-700 px-3 py-2 border rounded" id="event_filename[]" name="event_filename[]" multiple="multiple">
+			    	<input type="file" class="w-full text-gray-700 px-3 py-2 border rounded" id="event_filename[]" name="event_filename[]" multiple="multiple" required>
 			    </div>
 
 				<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">

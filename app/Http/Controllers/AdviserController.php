@@ -33,7 +33,7 @@ class AdviserController extends Controller
             'adviser_lname' => 'required',
             'adviser_designation' => 'required',
             'adviser_filename' => 'required',
-            'adviser_filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
+            'adviser_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
         ]);
 
         $Upload_model = new Adviser;
@@ -70,7 +70,7 @@ class AdviserController extends Controller
             'adviser_lname' => 'required',
             'adviser_designation' => 'required',
             'adviser_filename' => 'required',
-            'adviser_filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
+            'adviser_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
         ]);
 
         $Upload_model = Adviser::find($adviser->id);

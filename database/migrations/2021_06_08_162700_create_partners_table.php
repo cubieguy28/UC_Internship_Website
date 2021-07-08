@@ -15,14 +15,15 @@ class CreatePartnersTable extends Migration
     {
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
-            $table->string('partner_name');
+            $table->string('partner_name', 20);
             $table->text('partner_description');
-            $table->string('partner_contact_person_fname');
-            $table->string('partner_contact_person_lname');
-            $table->string('partner_email');
-            $table->string('partner_mobile_number');
-            $table->string('partner_landline_number');
-            $table->string('partner_filename');
+            $table->string('partner_category', 20);
+            $table->string('partner_contact_person_fname', 20);
+            $table->string('partner_contact_person_lname', 20);
+            $table->string('partner_email', 20);
+            $table->string('partner_mobile_number', 20);
+            $table->string('partner_landline_number', 20);
+            $table->string('partner_filename', 50);
 
             $table->timestamps();
         });

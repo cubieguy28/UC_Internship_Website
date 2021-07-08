@@ -38,7 +38,7 @@ class EventController extends Controller
             'event_time' => 'required',
             'event_participant' => 'required',
             'event_filename' => 'required',
-            'event_filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
+            'event_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
         ]);
 
         $Upload_model = new Event;
@@ -85,7 +85,7 @@ class EventController extends Controller
             'event_time' => 'required',
             'event_participant' => 'required',
             'event_filename' => 'required',
-            'event_filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
+            'event_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
         ]);
 
         $Upload_model = Event::find($event->id);

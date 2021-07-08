@@ -21,6 +21,8 @@
 		    
 		    <h1>Description = {{ $partner->partner_description }}</h1>
 
+		    <h1>Category = {{ $partner->partner_category }}</h1>
+
 		    <h1>Contact Person First Name = {{ $partner->partner_contact_person_fname }}</h1>
 
 		    <h1>Contact Person Last Name = {{ $partner->partner_contact_person_lname }}</h1>

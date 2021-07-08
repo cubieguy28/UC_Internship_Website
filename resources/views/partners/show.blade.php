@@ -10,7 +10,7 @@
 			@csrf
 			@method('DELETE')
 			
-				<button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">DELETE
+				<button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline delete-confirm" type="submit">DELETE
 					
 				</button>
 			
@@ -24,6 +24,8 @@
 		    <h1>Name = {{ $partner->partner_name }}</h1>
 		    
 		    <h1>Description = {{ $partner->partner_description }}</h1>
+
+		    <h1>Category = {{ $partner->partner_category }}</h1>
 
 		    <h1>Contact Person First Name = {{ $partner->partner_contact_person_fname }}</h1>
 

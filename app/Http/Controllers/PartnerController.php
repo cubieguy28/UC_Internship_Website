@@ -31,19 +31,21 @@ class PartnerController extends Controller
         $this->validate($request, [
             'partner_name' => 'required',
             'partner_description' => 'required',
+            'partner_category' => 'required',
             'partner_contact_person_fname' => 'required',
             'partner_contact_person_lname' => 'required',
             'partner_email' => 'required',
             'partner_mobile_number' => 'required',
             'partner_landline_number' => 'required',
             'partner_filename' => 'required',
-            'partner_filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
+            'partner_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
 
         ]);
 
         $Upload_model = new Partner;
         $Upload_model->partner_name = $request->input('partner_name');
         $Upload_model->partner_description = $request->input('partner_description');
+        $Upload_model->partner_category = $request->input('partner_category');
         $Upload_model->partner_contact_person_fname = $request->input('partner_contact_person_fname');
         $Upload_model->partner_contact_person_lname = $request->input('partner_contact_person_lname');
         $Upload_model->partner_email = $request->input('partner_email');
@@ -77,19 +79,21 @@ class PartnerController extends Controller
         $this->validate($request, [
             'partner_name' => 'required',
             'partner_description' => 'required',
+            'partner_category' => 'required',
             'partner_contact_person_fname' => 'required',
             'partner_contact_person_lname' => 'required',
             'partner_email' => 'required',
             'partner_mobile_number' => 'required',
             'partner_landline_number' => 'required',
             'partner_filename' => 'required',
-            'partner_filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
+            'partner_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
 
         ]);
 
         $Upload_model = Partner::find($partner->id);
         $Upload_model->partner_name = $request->input('partner_name');
         $Upload_model->partner_description = $request->input('partner_description');
+        $Upload_model->partner_category = $request->input('partner_category');
         $Upload_model->partner_contact_person_fname = $request->input('partner_contact_person_fname');
         $Upload_model->partner_contact_person_lname = $request->input('partner_contact_person_lname');
         $Upload_model->partner_email = $request->input('partner_email');

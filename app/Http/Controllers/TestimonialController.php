@@ -34,7 +34,7 @@ class TestimonialController extends Controller
                 'testimonial_title' => 'required',
                 'testimonial_testimony' => 'required',
                 'testimonial_filename' => 'required',
-                'testimonial_filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
+                'testimonial_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
         ]);
 
         $Upload_model = new Testimonial;
@@ -73,7 +73,7 @@ class TestimonialController extends Controller
                 'testimonial_title' => 'required',
                 'testimonial_testimony' => 'required',
                 'testimonial_filename' => 'required',
-                'testimonial_filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
+                'testimonial_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
         ]);
 
         $Upload_model = Testimonial::find($testimonial->id);
