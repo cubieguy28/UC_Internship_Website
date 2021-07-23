@@ -1,0 +1,22 @@
+.show {
+  display: block!important;
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  /* The bottom is for animation when the popup gets shown */
+  animation: popup .2s 1;
+}
+
+@keyframes popup {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+
+.popuptext {
+  display: none;
+}
+
+.popup {
+  cursor: pointer;
+}

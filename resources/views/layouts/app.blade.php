@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slideshow.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/popup.css') }}">
 
 	<title>University of the Cordilleras</title>
 
@@ -141,9 +142,7 @@
                 }
               });
           });
-
     </script>
-
     
 </body>
 </html>

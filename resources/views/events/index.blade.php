@@ -4,6 +4,8 @@
 
 	<div class="p-5">
 
+		<h1 class="text-3xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13;">ACTIVITIES</h1>
+
 		<a href="/events/create" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Create Event</a> <br><br>
 
 		@foreach($events as $event)
