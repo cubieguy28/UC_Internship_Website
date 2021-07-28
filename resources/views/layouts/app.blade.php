@@ -9,20 +9,22 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slideshow.css') }}">
     <link rel="stylesheet" href="{{ asset('css/popup.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
 	<title>University of the Cordilleras</title>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
 </head>
-<body class="bg-gray-200 flex flex-col min-h-screen" style="font-family: Verdana;" >
+<body class="flex flex-col min-h-screen" style="font-family: Verdana;" >
 
     <header>
         <div class="w-full">
             <img src="/citcs_header.jpg">
         </div>
             
-        <nav class="p-2 bg-gray-50">
+        <nav class="p-2 bg-gray-100">
             <ul class="flex items-center text-sm font-semibold tracking-wider flex justify-around" style="color: #003d13;">
                 <li class="hover:bg-gray-200 p-1 rounded-lg">
                     <a href="/" class="p-3">Home</a>
@@ -97,20 +99,23 @@
             <p class="font-bold mb-5">UNIVERSITY OF THE CORDILLERAS</p>
             <ul class="text-xs">
                 <li class="mb-2">
-                    <a href="">Official Website</a>
+                    <a href="https://www.uc-bcf.edu.ph/">Official Website</a>
                 </li>
                 <li class="mb-2">
-                    <a href="">LinkedIn</a>
+                    <a href="https://www.linkedin.com/school/university-of-the-cordilleras/">LinkedIn</a>
                 </li>
                 <li class="mb-2">
-                    <a href="">Facebook</a>
+                    <a href="https://www.facebook.com/UCjaguars">Facebook</a>
                 </li>
             </ul>
         </div>
 
     </footer>
 
-    <script type="text/javascript" src="{{ asset('js/slideshow.js') }}"></script>
+    <!-- <script type="text/javascript" src="{{ asset('js/slideshow.js') }}"></script> -->
+    <script type="text/javascript" src="{{ asset('js/slideshow-2.js') }}"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
 
     <script type="text/javascript">
     $(document).ready(function() {

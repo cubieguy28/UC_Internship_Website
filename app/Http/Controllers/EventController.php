@@ -10,7 +10,7 @@ class EventController extends Controller
 {
     public function index()
     {
-        $events = Event::all();
+        $events = Event::paginate(12);
         return view('events.index', compact('events'));
     }
 
@@ -55,12 +55,15 @@ class EventController extends Controller
         {
             foreach($request->file('event_filename') as $image)
             {
+
                 $name=$image->hashName();
                 $image->move('event_images/', $name);  // your folder path
                 $data[] = $name;
+                $counter = count($data);
+                
             }
         }
-        
+        $Upload_model->image_counter = $counter;
         $Upload_model->event_filename = json_encode($data);
         $Upload_model->save();
 
@@ -70,6 +73,11 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         return view('events.edit', compact('event'));
+    }
+
+    public function editImg(Event $event)
+    {
+        return view('events.edit-img', compact('event'));
     }
 
     public function update(Request $request, Event $event)
@@ -84,8 +92,6 @@ class EventController extends Controller
             'event_category' => 'required',
             'event_time' => 'required',
             'event_participant' => 'required',
-            'event_filename' => 'required',
-            'event_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
         ]);
 
         $Upload_model = Event::find($event->id);
@@ -97,6 +103,21 @@ class EventController extends Controller
         $Upload_model->event_category = $request->input('event_category');
         $Upload_model->event_time = $request->input('event_time');
         $Upload_model->event_participant = $request->input('event_participant');
+
+        $Upload_model->update();
+        
+        return redirect('/events/');
+    }
+
+    public function updateImg(Request $request, Event $event)
+    {
+
+        $this->validate($request, [
+            'event_filename' => 'required',
+            'event_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
+        ]);
+
+        $Upload_model = Event::find($event->id);
 
         if($request->hasfile('event_filename'))
         {
@@ -114,14 +135,15 @@ class EventController extends Controller
                 $name=$image->hashName();
                 $image->move('event_images/', $name);  // your folder path
                 $data[] = $name;
+                $counter = count($data);
             }
         }
-        
+        $Upload_model->image_counter = $counter;
         $Upload_model->event_filename = json_encode($data);
         $Upload_model->update();
         
         return redirect('/events/');
-    }   
+    }     
 
     public function destroy(Event $event)
     {

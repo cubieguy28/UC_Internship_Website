@@ -62,6 +62,11 @@ class AdviserController extends Controller
         return view('advisers.edit', compact('adviser'));
     }
 
+    public function editImg(Adviser $adviser)
+    {
+        return view('advisers.edit-img', compact('adviser'));
+    }
+
     public function update(Request $request, Adviser $adviser)
     {
 
@@ -69,14 +74,27 @@ class AdviserController extends Controller
             'adviser_fname' => 'required',
             'adviser_lname' => 'required',
             'adviser_designation' => 'required',
-            'adviser_filename' => 'required',
-            'adviser_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
         ]);
 
         $Upload_model = Adviser::find($adviser->id);
         $Upload_model->adviser_fname = $request->input('adviser_fname');
         $Upload_model->adviser_lname = $request->input('adviser_lname');
         $Upload_model->adviser_designation = $request->input('adviser_designation');
+
+        $Upload_model->update();
+        
+        return redirect('/advisers/');
+    }   
+
+    public function updateImg(Request $request, Adviser $adviser)
+    {
+
+        $this->validate($request, [
+            'adviser_filename' => 'required',
+            'adviser_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
+        ]);
+
+        $Upload_model = Adviser::find($adviser->id);
 
         if($request->hasfile('adviser_filename'))
         {
@@ -100,7 +118,7 @@ class AdviserController extends Controller
         $Upload_model->update();
         
         return redirect('/advisers/');
-    }   
+    }  
 
     public function destroy(Adviser $adviser)
     {

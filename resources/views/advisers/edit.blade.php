@@ -34,11 +34,6 @@
 			      </select>
 			    </div>
 
-			    <div class="mb-4">
-			    	<label class="block text-gray-700 text-sm font-bold mb-2" for="adviser_filename">Choose your image</label>
-			    	<input type="file" class="w-full text-gray-700 px-3 py-2 border rounded" id="adviser_filename[]" name="adviser_filename[]" required>
-			    </div>
-
 				<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
 				Submit
 				</button>

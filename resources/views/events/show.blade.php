@@ -5,6 +5,9 @@
 	<div class="p-5">
 	
 		<a href="/events/{{ $event->id }}/edit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Edit</a><br><br>
+
+		<a href="/events/img/{{ $event->id }}/edit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Change Image</a><br><br>
+
 		<form action="/events/{{ $event->id }}" method="POST">
 
 			@csrf

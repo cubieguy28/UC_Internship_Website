@@ -4,38 +4,47 @@
 
 	<div class="p-5">
 
+		<h1 class="text-3xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13;">INDUSTRY PARTNERS</h1>
+
 		<a href="/partners/create" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Create Partner</a> <br><br>
 
-		@foreach($partners as $partner)
-		    
-		    <h1>
-		    	<a href="/partners/{{ $partner -> id }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded-full text-xs">Edit ID({{ $partner->id }})</a>
-		    </h1>
-		    
-		    
-		    <?php foreach (json_decode($partner->partner_filename)as $picture) { ?>
-                 <img src="{{ asset('/partner_images/'.$picture) }}" style="height:120px; width:200px"/>
-         	<?php } ?>
-		    
-		    <h1>Name = {{ $partner->partner_name }}</h1>
-		    
-		    <h1>Description = {{ $partner->partner_description }}</h1>
+		<div class="flex grid gap-10 grid-cols-2 px-24" style="color: #003d13;">
+			@foreach($partners as $partner)
+				<div class="rounded-lg flex text-center grid justify-items-center">  
+			    	<div class="grid justify-items-center">
 
-		    <h1>Category = {{ $partner->partner_category }}</h1>
+					    <div class="flex grid gap-2 grid-cols-2 rounded-lg p-3" style="color: #003d13; ">
+				        	<div class="flex grid justify-items-center rounded-lg bg-gray-100"> 
+				        		
+				        		<?php foreach (json_decode($partner->partner_filename)as $picture) { ?>
+				        				
+		                 			<img class="mt-6" src="{{ asset('/partner_images/'.$picture) }}" style="height:150px; width:150px"/>
+			                 			
+			         			<?php } ?>			         			
 
-		    <h1>Contact Person First Name = {{ $partner->partner_contact_person_fname }}</h1>
+			     				<br>
 
-		    <h1>Contact Person Last Name = {{ $partner->partner_contact_person_lname }}</h1>
-		    
-		    <h1>Email = {{ $partner->partner_email }}</h1>
+				        	</div>
 
-		    <h1>Mobile No. = {{ $partner->partner_mobile_number }}</h1>
+				        		<div class="text-left m-2">
+					        		<h1 class="font-bold">{{ $partner->partner_name }}</h1>
+									<p class="text-sm">
+									    {{ \Illuminate\Support\Str::limit($partner->partner_description, 200, $end='...') }}									    
+									</p>
 
-		    <h1>Landline No. = {{ $partner->partner_landline_number }}</h1>
+									<a href="/partners/{{ $partner -> id }}" onclick="myFunctionRead()" id="myBtn" class="text-xs italic">Read more</a>
 
-		    <span>---------------------------------------------------------------------------</span>
-		    
-    	@endforeach
+
+
+					        	</div>
+								
+				        </div>
+
+			    </div>
+
+			</div>
+	    	@endforeach
+    	</div>
 
 
 	</div>

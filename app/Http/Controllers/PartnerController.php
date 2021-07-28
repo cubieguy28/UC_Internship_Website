@@ -73,6 +73,11 @@ class PartnerController extends Controller
         return view('partners.edit', compact('partner'));
     }
 
+    public function editImg(Partner $partner)
+    {
+        return view('partners.edit-img', compact('partner'));
+    }
+
     public function update(Request $request, Partner $partner)
     {
 
@@ -85,8 +90,6 @@ class PartnerController extends Controller
             'partner_email' => 'required',
             'partner_mobile_number' => 'required',
             'partner_landline_number' => 'required',
-            'partner_filename' => 'required',
-            'partner_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
 
         ]);
 
@@ -99,6 +102,22 @@ class PartnerController extends Controller
         $Upload_model->partner_email = $request->input('partner_email');
         $Upload_model->partner_mobile_number = $request->input('partner_mobile_number');
         $Upload_model->partner_landline_number = $request->input('partner_landline_number');
+
+        
+        $Upload_model->update();
+
+        return redirect('/partners');
+    }   
+
+    public function updateImg(Request $request, Partner $partner)
+    {
+        $this->validate($request, [
+            'partner_filename' => 'required',
+            'partner_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
+
+        ]);
+
+        $Upload_model = Partner::find($partner->id);
 
         if($request->hasfile('partner_filename'))
         {
@@ -122,7 +141,7 @@ class PartnerController extends Controller
         $Upload_model->update();
 
         return redirect('/partners');
-    }   
+    }
 
     public function destroy(Partner $partner)
     {

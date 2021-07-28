@@ -51,7 +51,7 @@ class TestimonialController extends Controller
                 $image->move('testimonial_images/', $name);  // your folder path
                 $data[] = $name;
             }
-        }
+        } 
         
         $Upload_model->testimonial_filename = json_encode($data);
         $Upload_model->save();
@@ -64,6 +64,11 @@ class TestimonialController extends Controller
         return view('testimonials.edit', compact('testimonial'));
     }
 
+        public function editImg(Testimonial $testimonial)
+    {
+        return view('testimonials.edit-img', compact('testimonial'));
+    }
+
     public function update(Request $request, Testimonial $testimonial)
     {
 
@@ -72,8 +77,6 @@ class TestimonialController extends Controller
                 'testimonial_lname' => 'required',
                 'testimonial_title' => 'required',
                 'testimonial_testimony' => 'required',
-                'testimonial_filename' => 'required',
-                'testimonial_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
         ]);
 
         $Upload_model = Testimonial::find($testimonial->id);
@@ -82,9 +85,23 @@ class TestimonialController extends Controller
         $Upload_model->testimonial_title = $request->input('testimonial_title');
         $Upload_model->testimonial_testimony = $request->input('testimonial_testimony');
 
+        $Upload_model->update();
+        
+        return redirect('/testimonials');
+        // return redirect()->back()->with('status', 'Updated Successfully'); redirect back to same page
+    }  
+
+    public function updateImg(Request $request, Testimonial $testimonial)
+    {
+        $this->validate($request, [
+                'testimonial_filename' => 'required',
+                'testimonial_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
+        ]);
+
+        $Upload_model = Testimonial::find($testimonial->id);
+
         if($request->hasfile('testimonial_filename'))
         {
-
             
             foreach (json_decode($Upload_model->testimonial_filename, true) as $image) {
 
@@ -106,8 +123,7 @@ class TestimonialController extends Controller
         $Upload_model->update();
         
         return redirect('/testimonials');
-        // return redirect()->back()->with('status', 'Updated Successfully'); redirect back to same page
-    }   
+    }
 
     public function destroy(Testimonial $testimonial)
     {

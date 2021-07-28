@@ -24,8 +24,7 @@ class CreateEventsTable extends Migration
             $table->time('event_time');
             $table->integer('event_participant');
             $table->string('event_filename', 10000);
-
-
+            $table->integer('image_counter');
             $table->timestamps();
         });
     }

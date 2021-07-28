@@ -72,11 +72,6 @@
 			      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_landline_number" name="partner_landline_number" type="text" placeholder="Landline No." value="{{ $partner->partner_landline_number }}">
 			    </div>
 
-			    <div class="mb-4">
-			    	<label class="block text-gray-700 text-sm font-bold mb-2" for="partner_filename">Choose your image</label>
-			    	<input type="file" class="w-full text-gray-700 px-3 py-2 border rounded" id="partner_filename[]" name="partner_filename[]" required>
-			    </div>
-
 				<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
 				Submit
 				</button>
