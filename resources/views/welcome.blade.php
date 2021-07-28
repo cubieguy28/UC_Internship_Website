@@ -12,116 +12,55 @@
     <div class="w-full h-auto bg-white p-24">
         <h1 class="text-3xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13;">LATEST EVENTS</h1>
 
+
+
         <div class="flex items-center grid gap-4 grid-cols-4 mb-16" style="color: #003d13;">
 
-            <div class="grid grid-cols-2 rounded-lg p-3 bg-gray-100">
+        @foreach($events as $event)
+
+            <div class="grid grid-cols-2 rounded-lg p-3 bg-gray-100" style="height: 250px;">
 
                 <div class="col-span-full">
                     <div class="absolute p-1 bg-gray-100 rounded-lg text-xs mt-2 ml-2 italic">
-                        <p>X photos</p>
+                                    
+                        @if($event->image_counter == 1) 
+                            <p>{{ $event->image_counter }} photo</p>
+                        
+                        @else
+                        <p>{{ $event->image_counter }} photos</p>
+                        @endif
+                        
                     </div>
-                    <a href="">
-                        <img src="test.png" class="rounded-lg">
+                    <a href="/events/{{ $event -> id }}">
+                        <?php foreach (json_decode($event->event_filename)as $picture) { ?>         
+                    
+                            <div class="carousel-cell">
+                            <img src="{{ asset('/event_images/'.$picture) }}"/>
+                            </div>
+
+                            @break
+                        
+                        <?php } ?>
                     </a>
-                    
-                    
+                              
                 </div>
 
                 <div class="col-span-full font-bold mt-2">
-                    <span>Event 1</span>
+                    <span>{{ $event->event_name }}</span>
                 </div>
 
                 <div class="col-start-1 text-xs italic mt-2">
-                    <span>Date</span>
+                    <span>{{ \Carbon\Carbon::parse($event->event_date)->format('M d, Y') }}</span>
                 </div>
 
                 <div class="col-start-2 text-right text-xs italic mt-2">
-                    <span>Type</span>
+                    <span>{{ $event->event_category }}</span>
                 </div> 
 
             </div>
 
-            <div class="grid grid-cols-2 rounded-lg p-3 bg-gray-100">
-
-                <div class="col-span-full">
-                    <div class="absolute p-1 bg-gray-100 rounded-lg text-xs mt-2 ml-2 italic">
-                        <p>X photos</p>
-                    </div>
-                    <a href="">
-                        <img src="test.png" class="rounded-lg">
-                    </a>
-                    
-                </div>
-
-                <div class="col-span-full font-bold mt-2">
-                    <span>Event 2</span>
-                </div>
-
-                <div class="col-start-1 text-xs italic mt-2">
-                    <span>Date</span>
-                </div>
-
-                <div class="col-start-2 text-right text-xs italic mt-2">
-                    <span>Type</span>
-                </div> 
-
-            </div>
-
-            <div class="grid grid-cols-2 rounded-lg p-3 bg-gray-100">
-
-                <div class="col-span-full">
-                    <div class="absolute p-1 bg-gray-100 rounded-lg text-xs mt-2 ml-2 italic">
-                        <p>X photos</p>
-                    </div>
-                    <a href="">
-                        <img src="test.png" class="rounded-lg">
-                    </a>
-                    
-                    
-                </div>
-
-                <div class="col-span-full font-bold mt-2">
-                    <span>Event 3</span>
-                </div>
-
-                <div class="col-start-1 text-xs italic mt-2">
-                    <span>Date</span>
-                </div>
-
-                <div class="col-start-2 text-right text-xs italic mt-2">
-                    <span>Type</span>
-                </div> 
-
-            </div>
-
-            <div class="grid grid-cols-2 rounded-lg p-3 bg-gray-100">
-
-                <div class="col-span-full">
-                    <div class="absolute p-1 bg-gray-100 rounded-lg text-xs mt-2 ml-2 italic">
-                        <p>X photos</p>
-                    </div>
-                    <a href="">
-                        <img src="test.png" class="rounded-lg">
-                    </a>
-                    
-                    
-                </div>
-
-                <div class="col-span-full font-bold mt-2">
-                    <span>Event 4</span>
-                </div>
-
-                <div class="col-start-1 text-xs italic mt-2">
-                    <span>Date</span>
-                </div>
-
-                <div class="col-start-2 text-right text-xs italic mt-2">
-                    <span>Type</span>
-                </div> 
-
-            </div>
-
-        </div>
+        @endforeach
+    </div>
 
         <div class=" flex justify-center">
             <a href="/events">

@@ -17,28 +17,51 @@
 					
 				</button>
 			
-
 		</form>
+
+		
+			
+		
+		<div class="slideshow-container">		
 	
 			<?php foreach (json_decode($event->event_filename)as $picture) { ?>
-                 <img src="{{ asset('/event_images/'.$picture) }}" style="height:120px; width:200px"/>
+				<div class="mySlides fade">
+      			
+                 <img src="{{ asset('/event_images/'.$picture) }}"/>
+                  
+              </div>
+		
          	<?php } ?>
-		    
-		    <h1>Event Name = {{ $event->event_name }}</h1>
-		    
-		    <h1>Event Description = {{ $event->event_description }}</h1>
 
-		    <h1>Event Speaker First Name = {{ $event->event_speaker_fname }}</h1>
+         	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  			<a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-		    <h1>Event Speaker Last Name = {{ $event->event_speaker_lname }}</h1>
+         </div>
 
-		    <h1>Event Category = {{ $event->event_category }}</h1>
+         <h1 class="text-3xl font-bold tracking-wider mt-8 text-center" style="color: #003d13;">{{ $event->event_name }}</h1>
+         <h1 class="text-xl italic tracking-wider text-center" style="color: #003d13;">{{ $event->event_category }}</h1>
 
-		    <h1>Event Date = {{ $event->event_date }}</h1>
+         <h1 class="text-xs italic tracking-wider text-center">{{ \Carbon\Carbon::parse($event->event_date)->format('M d, Y') }} | {{\Carbon\Carbon::createFromFormat('H:i:s',$event->event_time)->format('h:i A')}}</h1>
 
-		    <h1>Event Time = {{ $event->event_time }}</h1>
 
-		    <h1>Event Participants = {{ $event->event_participant }}</h1>
+
+					    	
+
+     	<div class="font-bold text-left px-24">
+     		<h1 class="italic text-xl">About this event:</h1>	
+     		<p>{{ $event->event_description }}</p> 
+     		<br>
+     		<h1 class="italic text-xl">Speaker of this event:</h1>
+     		@if($event->event_speaker_fname && $event->event_speaker_lname == "N/A")
+     		<p>N/A</p>
+     		@else
+     		<p>{{ $event->event_speaker_fname }} {{ $event->event_speaker_lname }}</p>
+     		@endif
+     		<p></p>
+     		<br> 
+     		<h1 class="italic text-xl">No. of Participants:</h1>
+     		<h1>{{ $event->event_participant }}</h1>
+		</div>
 
 	</div>
 

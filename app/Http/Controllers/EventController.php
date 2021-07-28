@@ -8,9 +8,16 @@ use Illuminate\Support\Facades\File;
 
 class EventController extends Controller
 {
-    public function index()
+
+    public function indexWelcome()
     {
-        $events = Event::paginate(12);
+        $events = Event::latest()->paginate(4);
+        return view('welcome', compact('events'));
+    }
+
+    public function index()
+    {        
+        $events = Event::latest()->paginate(12);
         return view('events.index', compact('events'));
     }
 

@@ -2,11 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'EventController@indexWelcome');
 
-//EVENTS TABLE
+//EVENTS
 Route::get('/events', 'EventController@index');
 Route::get('/events/create', 'EventController@create');
 Route::get('/events/{event}', 'EventController@show');

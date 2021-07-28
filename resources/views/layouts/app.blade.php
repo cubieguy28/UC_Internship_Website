@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slideshow.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/popup.css') }}">
+
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
 	<title>University of the Cordilleras</title>
