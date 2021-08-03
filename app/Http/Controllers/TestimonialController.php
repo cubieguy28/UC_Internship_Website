@@ -52,6 +52,8 @@ class TestimonialController extends Controller
                 $data[] = $name;
             }
         } 
+        $video_data[] = "null";
+        $Upload_model->testimonial_video = json_encode($video_data);
         
         $Upload_model->testimonial_filename = json_encode($data);
         $Upload_model->save();
@@ -64,9 +66,14 @@ class TestimonialController extends Controller
         return view('testimonials.edit', compact('testimonial'));
     }
 
-        public function editImg(Testimonial $testimonial)
+    public function editImg(Testimonial $testimonial)
     {
         return view('testimonials.edit-img', compact('testimonial'));
+    }
+
+    public function editVideo(Testimonial $testimonial)
+    {
+        return view('testimonials.edit-video', compact('testimonial'));
     }
 
     public function update(Request $request, Testimonial $testimonial)
@@ -125,6 +132,41 @@ class TestimonialController extends Controller
         return redirect('/testimonials');
     }
 
+    public function updateVideo(Request $request, Testimonial $testimonial)
+    {
+
+        $this->validate($request, [
+                'testimonial_video' => 'required',
+                'testimonial_video.*' => 'mimetypes:video/mp4|max:20000'
+        ]);
+
+        $Upload_model = Testimonial::find($testimonial->id);
+
+        if($request->hasfile('testimonial_video'))
+        {
+            
+            foreach (json_decode($Upload_model->testimonial_video, true) as $video) {
+
+            $destination = 'testimonial_videos/'.$video;
+            if(File::exists($destination)){
+            File::delete($destination);
+            }
+            }
+            
+            foreach($request->file('testimonial_video') as $video)
+            {
+                $name = $video->hashName();
+                $video->move('testimonial_videos/', $name);  // your folder path
+                $data[] = $name;
+            }
+        }
+        
+        $Upload_model->testimonial_video = json_encode($data);
+        $Upload_model->update();
+        
+        return redirect('/testimonials/'.$testimonial->id);
+    }
+
     public function destroy(Testimonial $testimonial)
     {
         $Upload_model = Testimonial::find($testimonial->id);
@@ -132,6 +174,14 @@ class TestimonialController extends Controller
         foreach (json_decode($Upload_model->testimonial_filename, true) as $image) {
 
             $destination = 'testimonial_images/'.$image;
+            if(File::exists($destination)){
+            File::delete($destination);
+            }
+        }
+
+        foreach (json_decode($Upload_model->testimonial_video, true) as $video) {
+
+            $destination = 'testimonial_videos/'.$video;
             if(File::exists($destination)){
             File::delete($destination);
             }

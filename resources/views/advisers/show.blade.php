@@ -3,6 +3,8 @@
 @section('content')
 
 	<div class="p-5">
+
+		@auth
 	
 		<a href="/advisers/{{ $adviser->id }}/edit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Edit</a><br><br>
 
@@ -17,16 +19,8 @@
 					
 				</button>
 		</form>
-	
-<!-- 		<?php foreach (json_decode($adviser->adviser_filename)as $picture) { ?>
-                 <img src="{{ asset('/adviser_images/'.$picture) }}" style="height:120px; width:200px"/>
-     	<?php } ?>
-		    
-	    <h1>First Name = {{ $adviser->adviser_fname }}</h1>
-	    
-	    <h1>Last Name = {{ $adviser->adviser_lname }}</h1>
 
-	    <h1>Designation = {{ $adviser->adviser_designation }}</h1> -->
+		@endauth
 
 	</div>
 

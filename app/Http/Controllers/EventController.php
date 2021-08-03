@@ -11,13 +11,42 @@ class EventController extends Controller
 
     public function indexWelcome()
     {
-        $events = Event::latest()->paginate(4);
+        $events = \DB::table('events')->orderBy('event_date', 'desc')->paginate(4);
         return view('welcome', compact('events'));
     }
 
     public function index()
     {        
-        $events = Event::latest()->paginate(12);
+        $events = \DB::table('events')->orderBy('event_date', 'desc')->paginate(12);
+        return view('events.index', compact('events'));
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $events = \DB::table('events')->where('event_name', 'like', '%'.$search.'%')->latest()->paginate(12);
+        return view('events.index', compact('events'));
+    }
+
+    public function filter(Request $request)
+    {
+        $category = $request->get('filter-by-category');
+        $year = $request->get('filter-by-year');
+        $events = \DB::table('events')->where('event_category', 'like', '%'.$category.'%')
+        ->Where('event_date', 'like', '%'.$year.'%')
+        ->latest()->paginate(12);
+        return view('events.index', compact('events'));
+    }
+
+    public function sort(Request $request)
+    {
+        $sort = $request->get('sort');
+        if($sort == 'Date from earliest'){
+            $events =\DB::table('events')->orderBy('event_date', 'asc')->paginate(12);
+        }else{
+            $events =\DB::table('events')->orderBy('event_date', 'desc')->paginate(12);
+        }
+
         return view('events.index', compact('events'));
     }
 

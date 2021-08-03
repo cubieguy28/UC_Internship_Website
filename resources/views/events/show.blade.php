@@ -3,6 +3,8 @@
 @section('content')
 
 	<div class="p-5">
+
+		@auth
 	
 		<a href="/events/{{ $event->id }}/edit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Edit</a><br><br>
 
@@ -19,33 +21,34 @@
 			
 		</form>
 
+		@endauth
+
+			<div class="flex justify-around items-center">
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
+					<div class="slideshow-container">		
 		
+				<?php foreach (json_decode($event->event_filename)as $picture) { ?>
+					<div class="mySlides fade">
+	      			
+	                 <img src="{{ asset('/event_images/'.$picture) }}" class="max-h-full object-contain h-screen w-screen" />
+	                  
+	              </div>
+			
+	         	<?php } ?>
+
+	         		</div>
+
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+
+		<div class="mt-4">
 			
 		
-		<div class="slideshow-container">		
-	
-			<?php foreach (json_decode($event->event_filename)as $picture) { ?>
-				<div class="mySlides fade">
-      			
-                 <img src="{{ asset('/event_images/'.$picture) }}"/>
-                  
-              </div>
-		
-         	<?php } ?>
-
-         	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  			<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-         </div>
-
-         <h1 class="text-3xl font-bold tracking-wider mt-8 text-center" style="color: #003d13;">{{ $event->event_name }}</h1>
+         <h1 class="text-3xl font-bold tracking-wider text-center" style="color: #003d13;">{{ $event->event_name }}</h1>
          <h1 class="text-xl italic tracking-wider text-center" style="color: #003d13;">{{ $event->event_category }}</h1>
 
          <h1 class="text-xs italic tracking-wider text-center">{{ \Carbon\Carbon::parse($event->event_date)->format('M d, Y') }} | {{\Carbon\Carbon::createFromFormat('H:i:s',$event->event_time)->format('h:i A')}}</h1>
-
-
-
-					    	
 
      	<div class="font-bold text-left px-24">
      		<h1 class="italic text-xl">About this event:</h1>	
@@ -61,6 +64,8 @@
      		<br> 
      		<h1 class="italic text-xl">No. of Participants:</h1>
      		<h1>{{ $event->event_participant }}</h1>
+		</div>
+
 		</div>
 
 	</div>

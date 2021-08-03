@@ -3,6 +3,8 @@
 @section('content')
 
 	<div class="p-5">
+
+		@auth
 	
 		<a href="/partners/{{ $partner->id }}/edit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Edit</a><br><br>
 		<a href="/partners/img/{{ $partner->id }}/edit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Change Image</a><br><br>
@@ -14,9 +16,10 @@
 				<button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline delete-confirm" type="submit">DELETE
 					
 				</button>
-			
-
+	
 		</form>
+
+		@endauth
 	
 			<?php foreach (json_decode($partner->partner_filename)as $picture) { ?>
                  <img src="{{ asset('/partner_images/'.$picture) }}" style="height:120px; width:200px"/>

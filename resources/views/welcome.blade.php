@@ -7,12 +7,9 @@
         <img src="body.jpg">
     </div>
 
-
 <!-- LATEST EVENTS -->
     <div class="w-full h-auto bg-white p-24">
         <h1 class="text-3xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13;">LATEST EVENTS</h1>
-
-
 
         <div class="flex items-center grid gap-4 grid-cols-4 mb-16" style="color: #003d13;">
 
@@ -81,14 +78,14 @@
                 <div class="slideshow-container">
 
                   <!-- Full-width images with number and caption text -->
-                  <div class="mySlides fade">
-                    <div class="numbertext">1 / 2</div>
-                    <img src="display.png" class="object-cover object-center h-auto w-full">
+                  <div class="mySlidesAuto fade">
+                    <div class="numbertext"></div>
+                    <img class="rounded-lg" src="display.png" class="object-cover object-center h-auto w-full">
                   </div>
 
-                  <div class="mySlides fade">
-                    <div class="numbertext">2 / 2</div>
-                    <img src="test.png" class="object-cover object-center h-auto w-full">
+                  <div class="mySlidesAuto fade">
+                    <div class="numbertext"></div>
+                    <img class="rounded-lg" src="test.png" class="object-cover object-center h-auto w-full">
                   </div>
 
                 </div>

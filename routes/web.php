@@ -1,11 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+
+//AUTH
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
+
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/', 'EventController@indexWelcome');
 
 //EVENTS
 Route::get('/events', 'EventController@index');
+Route::get('/search', 'EventController@search');
+Route::get('/filter', 'EventController@filter');
+Route::get('/sort', 'EventController@sort');
 Route::get('/events/create', 'EventController@create');
 Route::get('/events/{event}', 'EventController@show');
 Route::post('/events', 'EventController@store');
@@ -44,6 +56,8 @@ Route::get('/testimonials/{testimonial}', 'TestimonialController@show');
 Route::post('/testimonials', 'TestimonialController@store');
 Route::get('/testimonials/{testimonial}/edit', 'TestimonialController@edit');
 Route::get('/testimonials/img/{testimonial}/edit', 'TestimonialController@editImg');
+Route::get('/testimonials/vid/{testimonial}/edit', 'TestimonialController@editVideo');
 Route::put('/testimonials/{testimonial}', 'TestimonialController@update');
 Route::put('/testimonials/img/{testimonial}', 'TestimonialController@updateImg');
+Route::put('/testimonials/vid/{testimonial}', 'TestimonialController@updateVideo');
 Route::delete('/testimonials/{testimonial}', 'TestimonialController@destroy');

@@ -15,5 +15,6 @@ class Testimonial extends Model
         'testimonial_title',
         'testimonial_testimony',
         'testimonial_filename',
+        'testimonial_video',
     ];
 }

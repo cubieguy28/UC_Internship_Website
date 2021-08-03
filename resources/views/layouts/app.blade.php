@@ -10,11 +10,22 @@
     <link rel="stylesheet" href="{{ asset('css/slideshow.css') }}">
 
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> 
 
 	<title>University of the Cordilleras</title>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
+    <style>
+        .modal {
+          transition: opacity 0.25s ease;
+        }
+        body.modal-active {
+          overflow-x: hidden;
+          overflow-y: visible !important;
+        }
+      </style>
 
 </head>
 <body class="flex flex-col min-h-screen" style="font-family: Verdana;" >
@@ -112,11 +123,11 @@
 
     </footer>
 
-    <!-- <script type="text/javascript" src="{{ asset('js/slideshow.js') }}"></script> -->
-    <script type="text/javascript" src="{{ asset('js/slideshow-2.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/slideshow-auto.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/slideshow.js') }}"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
-
+    
     <script type="text/javascript">
     $(document).ready(function() {
       $(".btn-success").click(function(){ 
@@ -129,6 +140,7 @@
     });
     </script>
 
+    <!-- FOR DELETE CONFIRMATION -->
     <script type="text/javascript">
         $('.delete-confirm').click(function(e) {
               var form =  $(this).closest("form");
@@ -148,6 +160,65 @@
               });
           });
     </script>
+
+    <!-- FOR YEAR DROPDOWN -->
+    <script>
+    let dateDropdown = document.getElementById('filter-by-year');
+
+    let currentYear = new Date().getFullYear();
+    let earliestYear = 2016;
+
+    while (currentYear >= earliestYear) {
+      let dateOption = document.createElement('option');
+      dateOption.text = currentYear;
+      dateOption.value = currentYear;
+      dateDropdown.add(dateOption);
+      currentYear -= 1;
+    }
+    </script>
+
+    <!-- FOR MODAL -->
+    <script>
+    var openmodal = document.querySelectorAll('.modal-open')
+    for (var i = 0; i < openmodal.length; i++) {
+      openmodal[i].addEventListener('click', function(event){
+        event.preventDefault()
+        toggleModal()
+      })
+    }
+    
+    const overlay = document.querySelector('.modal-overlay')
+    overlay.addEventListener('click', toggleModal)
+    
+    var closemodal = document.querySelectorAll('.modal-close')
+    for (var i = 0; i < closemodal.length; i++) {
+      closemodal[i].addEventListener('click', toggleModal)
+    }
+    
+    document.onkeydown = function(evt) {
+      evt = evt || window.event
+      var isEscape = false
+      if ("key" in evt) {
+        isEscape = (evt.key === "Escape" || evt.key === "Esc")
+      } else {
+        isEscape = (evt.keyCode === 27)
+      }
+      if (isEscape && document.body.classList.contains('modal-active')) {
+        toggleModal()
+      }
+    };
+    
+    
+    function toggleModal () {
+      const body = document.querySelector('body')
+      const modal = document.querySelector('.modal')
+      modal.classList.toggle('opacity-0')
+      modal.classList.toggle('pointer-events-none')
+      body.classList.toggle('modal-active')
+    }
+    
+     
+  </script>
     
 </body>
 </html>

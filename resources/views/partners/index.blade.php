@@ -6,9 +6,20 @@
 
 		<h1 class="text-3xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13;">INDUSTRY PARTNERS</h1>
 
+		@auth
+
 		<a href="/partners/create" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Create Partner</a> <br><br>
 
+		@endauth
+
 		<div class="flex grid gap-10 grid-cols-2 px-24" style="color: #003d13;">
+
+			@if (count($partners) == 0)
+
+                <p>No results.</p>
+
+            @endif
+            
 			@foreach($partners as $partner)
 				<div class="rounded-lg flex text-center grid justify-items-center">  
 			    	<div class="grid justify-items-center">

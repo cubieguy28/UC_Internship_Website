@@ -6,7 +6,12 @@
 
 		<h1 class="text-3xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13;">ABOUT</h1>
 
+		@auth
+
 		<a href="/advisers/create" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Create Adviser</a> <br><br>
+
+		@endauth
+
 		<div class="flex grid gap-4 grid-cols-2 px-24" style="color: #003d13;">
 
 		<div class="rounded-lg p-3 flex text-center grid justify-items-center">  
@@ -64,6 +69,13 @@
 
 
 		<div class="flex grid gap-10 grid-cols-3 px-24" style="color: #003d13;">
+
+			@if (count($advisers) == 0)
+
+                <p>No results.</p>
+
+            @endif
+
 			@foreach($advisers as $adviser)
 
 			<div class="rounded-lg p-10 flex text-center grid justify-items-center border-2 border-black">  

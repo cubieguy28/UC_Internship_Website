@@ -20,7 +20,7 @@ class CreateTestimonialsTable extends Migration
             $table->string('testimonial_title', 20);
             $table->text('testimonial_testimony');
             $table->string('testimonial_filename', 50);
-
+            $table->string('testimonial_video', 50);
             $table->timestamps();
         });
     }
