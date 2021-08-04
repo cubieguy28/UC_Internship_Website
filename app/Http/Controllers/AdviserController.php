@@ -10,7 +10,7 @@ class AdviserController extends Controller
 {
     public function index()
     {
-        $advisers = Adviser::all();
+        $advisers = Adviser::paginate(6);
         return view('advisers.index', compact('advisers'));
     }
 

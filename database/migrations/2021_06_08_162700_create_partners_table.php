@@ -21,8 +21,8 @@ class CreatePartnersTable extends Migration
             $table->string('partner_contact_person_fname', 20);
             $table->string('partner_contact_person_lname', 20);
             $table->string('partner_email', 20);
-            $table->string('partner_mobile_number', 20);
-            $table->string('partner_landline_number', 20);
+            $table->string('partner_mobile_number', 20)->nullable();
+            $table->string('partner_landline_number', 20)->nullable();
             $table->string('partner_filename', 50);
 
             $table->timestamps();

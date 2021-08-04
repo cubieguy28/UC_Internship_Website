@@ -10,13 +10,13 @@ class PartnerController extends Controller
 {
     public function index()
     {
-        $partners = Partner::all();
+        $partners = Partner::paginate(6);
         return view('partners.index', compact('partners'));
     }
 
     public function show(Partner $partner)
     {
-        
+
         return view('partners.show', compact('partner'));
     }
 
@@ -27,7 +27,7 @@ class PartnerController extends Controller
 
     public function store(Request $request)
     {
-        
+
         $this->validate($request, [
             'partner_name' => 'required',
             'partner_description' => 'required',
@@ -35,8 +35,8 @@ class PartnerController extends Controller
             'partner_contact_person_fname' => 'required',
             'partner_contact_person_lname' => 'required',
             'partner_email' => 'required',
-            'partner_mobile_number' => 'required',
-            'partner_landline_number' => 'required',
+            'partner_mobile_number',
+            'partner_landline_number',
             'partner_filename' => 'required',
             'partner_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
 
@@ -52,16 +52,14 @@ class PartnerController extends Controller
         $Upload_model->partner_mobile_number = $request->input('partner_mobile_number');
         $Upload_model->partner_landline_number = $request->input('partner_landline_number');
 
-        if($request->hasfile('partner_filename'))
-        {
-            foreach($request->file('partner_filename') as $image)
-            {
-                $name=$image->hashName();
+        if ($request->hasfile('partner_filename')) {
+            foreach ($request->file('partner_filename') as $image) {
+                $name = $image->hashName();
                 $image->move('partner_images/', $name);  // your folder path
                 $data[] = $name;
             }
         }
-        
+
         $Upload_model->partner_filename = json_encode($data);
         $Upload_model->save();
 
@@ -88,8 +86,8 @@ class PartnerController extends Controller
             'partner_contact_person_fname' => 'required',
             'partner_contact_person_lname' => 'required',
             'partner_email' => 'required',
-            'partner_mobile_number' => 'required',
-            'partner_landline_number' => 'required',
+            'partner_mobile_number',
+            'partner_landline_number',
 
         ]);
 
@@ -103,11 +101,11 @@ class PartnerController extends Controller
         $Upload_model->partner_mobile_number = $request->input('partner_mobile_number');
         $Upload_model->partner_landline_number = $request->input('partner_landline_number');
 
-        
+
         $Upload_model->update();
 
         return redirect('/partners');
-    }   
+    }
 
     public function updateImg(Request $request, Partner $partner)
     {
@@ -119,24 +117,22 @@ class PartnerController extends Controller
 
         $Upload_model = Partner::find($partner->id);
 
-        if($request->hasfile('partner_filename'))
-        {
+        if ($request->hasfile('partner_filename')) {
 
             foreach (json_decode($Upload_model->partner_filename, true) as $image) {
 
-            $destination = 'partner_images/'.$image;
-            if(File::exists($destination)){
-            File::delete($destination);
+                $destination = 'partner_images/' . $image;
+                if (File::exists($destination)) {
+                    File::delete($destination);
+                }
             }
-            }
-            foreach($request->file('partner_filename') as $image)
-            {
-                $name=$image->hashName();
+            foreach ($request->file('partner_filename') as $image) {
+                $name = $image->hashName();
                 $image->move('partner_images/', $name);  // your folder path
                 $data[] = $name;
             }
         }
-        
+
         $Upload_model->partner_filename = json_encode($data);
         $Upload_model->update();
 
@@ -149,14 +145,13 @@ class PartnerController extends Controller
 
         foreach (json_decode($Upload_model->partner_filename, true) as $image) {
 
-            $destination = 'partner_images/'.$image;
-            if(File::exists($destination)){
-            File::delete($destination);
+            $destination = 'partner_images/' . $image;
+            if (File::exists($destination)) {
+                File::delete($destination);
             }
         }
 
         $partner->delete();
         return redirect('/partners');
     }
-
 }
