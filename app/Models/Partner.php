@@ -18,6 +18,8 @@ class Partner extends Model
         'partner_email',
         'partner_mobile_number',
         'partner_landline_number',
+        'partner_tagline',
+        'partner_link',
         'partner_filename',
         
     ];

@@ -83,7 +83,7 @@ class AdviserController extends Controller
 
         $Upload_model->update();
         
-        return redirect('/advisers/');
+        return redirect('/advisers/'.$adviser->id);
     }   
 
     public function updateImg(Request $request, Adviser $adviser)
@@ -117,7 +117,7 @@ class AdviserController extends Controller
         $Upload_model->adviser_filename = json_encode($data);
         $Upload_model->update();
         
-        return redirect('/advisers/');
+        return redirect('/advisers/'.$adviser->id);
     }  
 
     public function destroy(Adviser $adviser)

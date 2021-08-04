@@ -17,29 +17,20 @@
 		<div class="rounded-lg p-3 flex text-center grid justify-items-center">
 			<div class="grid justify-items-center">
 
-				<div class="grid gap-4 grid-cols-2">
-					<div class="mt-6">
-						<div class="bg-gray-300">
-							<img src="testpic.png">
-						</div>
-
+				<div class="flex flex-between flex-wrap">
+					<div class="mt-10 mr-10">
+							<img src="about_pre_images/about_img.jpg" class="shadow-lg transform rotate-45" style="max-height:230px ;max-width:230px;">
 						<br>
 
-						<div class="bg-gray-300">
-							<img src="testpic.png">
-						</div>
+						<img src="about_pre_images/about_img_3.jpg" class="shadow-lg transform rotate-12" style="max-height:230px ; max-width:230px;">
 					</div>
 
 					<div>
-						<div class="bg-gray-300">
-							<img src="testpic.png">
-						</div>
+						<img src="about_pre_images/about_img_4.jpg" class="shadow-lg transform rotate-2" style="max-height:250px ; max-width:250px; ">
 
 						<br>
 
-						<div class="bg-gray-300">
-							<img src="testpic.png">
-						</div>
+						<img src="about_pre_images/about_img_2.jpg" class="shadow-lg transform -rotate-12" style="max-height:250px ; max-width:250px; ">
 
 					</div>
 
@@ -78,12 +69,12 @@
 
 		@foreach($advisers as $adviser)
 
-		<div class="rounded-lg p-10 flex text-center grid justify-items-center border-2 border-black">
+		<div class="rounded-lg p-10 flex text-center grid justify-items-center border-2 border-black shadow-lg">
 			<div class="grid justify-items-center">
 
 				<?php foreach (json_decode($adviser->adviser_filename) as $picture) { ?>
 					<a href="/advisers/{{ $adviser -> id }}">
-						<img class="rounded-lg" src="{{ asset('/adviser_images/'.$picture) }}" style="max-height:250px; max-width:250px" />
+						<img class="rounded-lg object-cover w-full" src="{{ asset('/adviser_images/'.$picture) }}" style="max-height:250px; max-width:250px" />
 					</a>
 				<?php } ?>
 

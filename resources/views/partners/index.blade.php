@@ -29,7 +29,7 @@
 
 						<?php foreach (json_decode($partner->partner_filename) as $picture) { ?>
 
-							<img class="" src="{{ asset('/partner_images/'.$picture) }}" style="max-height:150px; max-width:150px" />
+							<img class="object-cover w-full" src="{{ asset('/partner_images/'.$picture) }}" style="max-height:180px; max-width:180px" />
 
 						<?php } ?>
 

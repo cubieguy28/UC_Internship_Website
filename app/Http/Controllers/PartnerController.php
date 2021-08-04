@@ -37,6 +37,8 @@ class PartnerController extends Controller
             'partner_email' => 'required',
             'partner_mobile_number',
             'partner_landline_number',
+            'partner_tagline',
+            'partner_link',
             'partner_filename' => 'required',
             'partner_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
 
@@ -51,6 +53,8 @@ class PartnerController extends Controller
         $Upload_model->partner_email = $request->input('partner_email');
         $Upload_model->partner_mobile_number = $request->input('partner_mobile_number');
         $Upload_model->partner_landline_number = $request->input('partner_landline_number');
+        $Upload_model->partner_tagline = $request->input('partner_tagline');
+        $Upload_model->partner_link = $request->input('partner_link');
 
         if ($request->hasfile('partner_filename')) {
             foreach ($request->file('partner_filename') as $image) {
@@ -88,7 +92,8 @@ class PartnerController extends Controller
             'partner_email' => 'required',
             'partner_mobile_number',
             'partner_landline_number',
-
+            'partner_tagline',
+            'partner_link',
         ]);
 
         $Upload_model = Partner::find($partner->id);
@@ -100,11 +105,12 @@ class PartnerController extends Controller
         $Upload_model->partner_email = $request->input('partner_email');
         $Upload_model->partner_mobile_number = $request->input('partner_mobile_number');
         $Upload_model->partner_landline_number = $request->input('partner_landline_number');
-
+        $Upload_model->partner_tagline = $request->input('partner_tagline');
+        $Upload_model->partner_link = $request->input('partner_link');
 
         $Upload_model->update();
 
-        return redirect('/partners');
+        return redirect('/partners/'.$partner->id);
     }
 
     public function updateImg(Request $request, Partner $partner)
@@ -136,7 +142,7 @@ class PartnerController extends Controller
         $Upload_model->partner_filename = json_encode($data);
         $Upload_model->update();
 
-        return redirect('/partners');
+        return redirect('/partners/'.$partner->id);
     }
 
     public function destroy(Partner $partner)

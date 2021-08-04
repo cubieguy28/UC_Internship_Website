@@ -94,8 +94,7 @@ class TestimonialController extends Controller
 
         $Upload_model->update();
         
-        return redirect('/testimonials');
-        // return redirect()->back()->with('status', 'Updated Successfully'); redirect back to same page
+        return redirect('/testimonials/'.$testimonial->id);
     }  
 
     public function updateImg(Request $request, Testimonial $testimonial)
@@ -129,7 +128,7 @@ class TestimonialController extends Controller
         $Upload_model->testimonial_filename = json_encode($data);
         $Upload_model->update();
         
-        return redirect('/testimonials');
+        return redirect('/testimonials/'.$testimonial->id);
     }
 
     public function updateVideo(Request $request, Testimonial $testimonial)

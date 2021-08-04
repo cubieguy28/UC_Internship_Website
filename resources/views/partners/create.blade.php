@@ -63,16 +63,30 @@
 
 			<div class="mb-4">
 				<label class="block text-gray-700 text-sm font-bold mb-2" for="partner_mobile_number">
-					Mobile No.
+					Mobile No. (Optional)
 				</label>
 				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_mobile_number" name="partner_mobile_number" type="text" placeholder="Contact No.">
 			</div>
 
 			<div class="mb-4">
 				<label class="block text-gray-700 text-sm font-bold mb-2" for="partner_landline_number">
-					Landline No.
+					Landline No. (Optional)
 				</label>
 				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_landline_number" name="partner_landline_number" type="text" placeholder="Landline No.">
+			</div>
+
+			<div class="mb-4">
+				<label class="block text-gray-700 text-sm font-bold mb-2" for="partner_tagline">
+					Tagline (Optional)
+				</label>
+				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_tagline" name="partner_tagline" type="text" placeholder="Tagline">
+			</div>
+
+			<div class="mb-4">
+				<label class="block text-gray-700 text-sm font-bold mb-2" for="partner_link">
+					Website Link (Optional)
+				</label>
+				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_link" name="partner_link" type="text" placeholder="partner_link">
 			</div>
 
 			<div class="mb-4">

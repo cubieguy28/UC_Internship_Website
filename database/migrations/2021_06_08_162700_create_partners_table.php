@@ -23,6 +23,8 @@ class CreatePartnersTable extends Migration
             $table->string('partner_email', 20);
             $table->string('partner_mobile_number', 20)->nullable();
             $table->string('partner_landline_number', 20)->nullable();
+            $table->string('partner_tagline', 100)->nullable();
+            $table->string('partner_link', 255)->nullable();
             $table->string('partner_filename', 50);
 
             $table->timestamps();

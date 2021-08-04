@@ -71,8 +71,8 @@ class EventController extends Controller
             'event_speaker_fname' => 'required',
             'event_speaker_lname' => 'required',
             'event_category' => 'required',
-            'event_time' => 'required',
-            'event_participant' => 'required',
+            'event_time',
+            'event_participant',
             'event_filename' => 'required',
             'event_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
         ]);
@@ -126,8 +126,8 @@ class EventController extends Controller
             'event_speaker_fname' => 'required',
             'event_speaker_lname' => 'required',
             'event_category' => 'required',
-            'event_time' => 'required',
-            'event_participant' => 'required',
+            'event_time',
+            'event_participant',
         ]);
 
         $Upload_model = Event::find($event->id);
@@ -142,7 +142,7 @@ class EventController extends Controller
 
         $Upload_model->update();
         
-        return redirect('/events/');
+        return redirect('/events/'.$event->id);
     }
 
     public function updateImg(Request $request, Event $event)
@@ -178,7 +178,7 @@ class EventController extends Controller
         $Upload_model->event_filename = json_encode($data);
         $Upload_model->update();
         
-        return redirect('/events/');
+        return redirect('/events/'.$event->id);
     }     
 
     public function destroy(Event $event)

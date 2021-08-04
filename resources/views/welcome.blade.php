@@ -31,8 +31,8 @@
                 <a href="/events/{{ $event -> id }}">
                     <?php foreach (json_decode($event->event_filename) as $picture) { ?>
 
-                        <div class="carousel-cell">
-                            <img src="{{ asset('/event_images/'.$picture) }}" style="max-height: 165px;"/>
+                        <div class="flex justify-center">
+                            <img class="rounded-lg object-cover w-full" src="{{ asset('/event_images/'.$picture) }}" style="max-height: 140px;"/>
                         </div>
 
                         @break

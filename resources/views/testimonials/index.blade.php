@@ -28,7 +28,7 @@
 				<?php foreach (json_decode($testimonial->testimonial_filename) as $picture) { ?>
 
 					<a href="/testimonials/{{ $testimonial -> id }}">
-						<img class="" src="{{ asset('/testimonial_images/'.$picture) }}" style="border-radius: 50%; max-width: 300px; max-height: 300px;" />
+						<img class="object-cover w-full" src="{{ asset('/testimonial_images/'.$picture) }}" style="border-radius: 50%; max-width: 300px; max-height: 300px;" />
 					</a>
 
 				<?php } ?>
