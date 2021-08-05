@@ -6,12 +6,6 @@
 
 	<h1 class="text-5xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13; font-variant: small-caps;">About</h1>
 
-	@auth
-
-	<a href="/advisers/create" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Create Adviser</a> <br><br>
-
-	@endauth
-
 	<div class="flex grid gap-4 grid-cols-2 px-24" style="color: #003d13;">
 
 		<div class="rounded-lg p-3 flex text-center grid justify-items-center">
@@ -57,6 +51,12 @@
 
 
 	<h1 class="text-3xl italic font-bold tracking-wider my-10 text-center" style="color: #003d13;">INTERNSHIP ADVISERS</h1>
+
+	@auth
+
+	<a href="/advisers/create" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Create Adviser</a> <br><br>
+
+	@endauth
 
 
 	<div class="flex flex-wrap justify-around px-24" style="color: #003d13;">
