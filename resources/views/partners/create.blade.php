@@ -42,23 +42,23 @@
 
 			<div class="mb-4">
 				<label class="block text-gray-700 text-sm font-bold mb-2" for="partner_contact_person_fname">
-					Company Contact Person First Name
+					Contact Person First Name (Optional)
 				</label>
-				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_contact_person_fname" name="partner_contact_person_fname" type="text" placeholder="First Name" required>
+				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_contact_person_fname" name="partner_contact_person_fname" type="text" placeholder="First Name">
 			</div>
 
 			<div class="mb-4">
 				<label class="block text-gray-700 text-sm font-bold mb-2" for="partner_contact_person_lname">
-					Company Contact Person Last Name
+					Contact Person Last Name (Optional)
 				</label>
-				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_contact_person_lname" name="partner_contact_person_lname" type="text" placeholder="Last Name" required>
+				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_contact_person_lname" name="partner_contact_person_lname" type="text" placeholder="Last Name">
 			</div>
 
 			<div class="mb-4">
 				<label class="block text-gray-700 text-sm font-bold mb-2" for="partner_email">
-					Company Email
+					Company Email (Optional)
 				</label>
-				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_email" name="partner_email" type="email" placeholder="Company Email" required>
+				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_email" name="partner_email" type="email" placeholder="Company Email">
 			</div>
 
 			<div class="mb-4">
@@ -84,9 +84,9 @@
 
 			<div class="mb-4">
 				<label class="block text-gray-700 text-sm font-bold mb-2" for="partner_link">
-					Website Link (Optional)
+					Website URL (Optional)
 				</label>
-				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_link" name="partner_link" type="text" placeholder="partner_link">
+				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_link" name="partner_link" type="text" placeholder="Website URL">
 			</div>
 
 			<div class="mb-4">

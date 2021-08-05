@@ -15,9 +15,9 @@ class CreateAdvisersTable extends Migration
     {
         Schema::create('advisers', function (Blueprint $table) {
             $table->id();
-            $table->string('adviser_fname', 20);
-            $table->string('adviser_lname', 20);
-            $table->string('adviser_designation', 20);
+            $table->string('adviser_fname', 100);
+            $table->string('adviser_lname', 100);
+            $table->string('adviser_designation', 100);
             $table->string('adviser_filename', 50);
 
             $table->timestamps();

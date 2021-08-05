@@ -69,8 +69,9 @@
 
 		@foreach($advisers as $adviser)
 
-		<div class="rounded-lg p-10 text-center border-2 border-black shadow-lg mb-10">
-			<div class="">
+		
+		<div class="rounded-lg p-10 pt-12 text-center border-2 border-black shadow-lg mb-10" style="width:33.34%;">
+			
 
 				<?php foreach (json_decode($adviser->adviser_filename) as $picture) { ?>
 					@auth
@@ -90,7 +91,7 @@
 					<h1 class="text-sm font-normal">{{ $adviser->adviser_designation }}</h1>
 				</div>
 
-			</div>
+			
 		</div>
 
 		@endforeach

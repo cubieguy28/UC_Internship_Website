@@ -42,23 +42,23 @@
 
 			<div class="mb-4">
 				<label class="block text-gray-700 text-sm font-bold mb-2" for="partner_contact_person_fname">
-					Company Contact Person First Name
+					Contact Person First Name (Optional)
 				</label>
-				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_contact_person_fname" name="partner_contact_person_fname" type="text" placeholder="First Name" value="{{ $partner->partner_contact_person_fname }}" required>
+				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_contact_person_fname" name="partner_contact_person_fname" type="text" placeholder="First Name" value="{{ $partner->partner_contact_person_fname }}">
 			</div>
 
 			<div class="mb-4">
 				<label class="block text-gray-700 text-sm font-bold mb-2" for="partner_contact_person_lname">
-					Company Contact Person Last Name
+					Contact Person Last Name (Optional)
 				</label>
-				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_contact_person_lname" name="partner_contact_person_lname" type="text" placeholder="Last Name" value="{{ $partner->partner_contact_person_lname }}" required>
+				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_contact_person_lname" name="partner_contact_person_lname" type="text" placeholder="Last Name" value="{{ $partner->partner_contact_person_lname }}">
 			</div>
 
 			<div class="mb-4">
 				<label class="block text-gray-700 text-sm font-bold mb-2" for="partner_email">
-					Company Email
+					Company Email (Optional)
 				</label>
-				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_email" name="partner_email" type="email" placeholder="Company Email" value="{{ $partner->partner_email }}" required>
+				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_email" name="partner_email" type="email" placeholder="Company Email" value="{{ $partner->partner_email }}">
 			</div>
 
 			<div class="mb-4">
@@ -84,9 +84,9 @@
 
 			<div class="mb-4">
 				<label class="block text-gray-700 text-sm font-bold mb-2" for="partner_link">
-					Website Link (Optional)
+					Website URL (Optional)
 				</label>
-				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_link" name="partner_link" type="text" placeholder="partner_link" value="{{ $partner->partner_link }}">
+				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="partner_link" name="partner_link" type="text" placeholder="Website URL" value="{{ $partner->partner_link }}">
 			</div>
 
 			<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">

@@ -88,10 +88,12 @@
 
 	<br>
 	<div class="flex justify-around items-center">
+		@if($partner->partner_contact_person_fname || $partner->partner_contact_person_lname)
 		<div>
 			<p class="text-center font-bold">{{ $partner->partner_contact_person_fname }} {{ $partner->partner_contact_person_lname }}</p>
 			<p class="text-center text-sm text-gray-500">Contact Person</p>
 		</div>
+		@endif
 
 		@if($partner->partner_link)
 		<div>
