@@ -11,7 +11,53 @@
 <div class="w-full h-auto bg-white p-24">
     <h1 class="text-5xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13; font-variant: small-caps;">Latest Events</h1>
 
+    <!-- <div class="flex items-center grid gap-4 grid-cols-4 mb-16" style="color: #003d13;"> -->
 
+        @foreach($events as $event)
+
+        <div class="grid grid-cols-2 rounded-lg p-3 bg-gray-100" style="height: 235px;">
+
+            <div class="col-span-full">
+                <div class="absolute p-1 bg-gray-100 rounded-lg text-xs mt-2 ml-2 italic">
+
+                    @if($event->image_counter == 1)
+                    <p>{{ $event->image_counter }} photo</p>
+
+                    @else
+                    <p>{{ $event->image_counter }} photos</p>
+                    @endif
+
+                </div>
+                <a href="/events/{{ $event -> id }}">
+                    <?php foreach (json_decode($event->event_filename) as $picture) { ?>
+
+                        <div class="flex justify-center">
+                            <img class="rounded-lg object-cover w-full" src="{{ asset('/event_images/'.$picture) }}" style="max-height: 140px;"/>
+                        </div>
+
+                        @break
+
+                    <?php } ?>
+                </a>
+
+            </div>
+
+            <div class="col-span-full font-bold mt-2">
+                <span>{{ $event->event_name }}</span>
+            </div>
+
+            <div class="col-start-1 text-xs italic mt-2">
+                <span>{{ \Carbon\Carbon::parse($event->event_date)->format('M d, Y') }}</span>
+            </div>
+
+            <div class="col-start-2 text-right text-xs italic mt-2">
+                <span>{{ $event->event_category }}</span>
+            </div>
+
+        </div>
+
+        @endforeach
+    </div>
 
     <div class=" flex justify-center">
         <a href="/events">
