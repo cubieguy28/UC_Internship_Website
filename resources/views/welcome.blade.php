@@ -4,7 +4,7 @@
 
 <!-- BODY -->
 <div class="w-full">
-    <img src="/body.jpg">
+    <img src="/body.JPG">
 </div>
 
 <!-- LATEST EVENTS -->
