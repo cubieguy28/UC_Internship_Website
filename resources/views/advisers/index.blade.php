@@ -73,9 +73,14 @@
 			<div class="">
 
 				<?php foreach (json_decode($adviser->adviser_filename) as $picture) { ?>
+					@auth
 					<a href="/advisers/{{ $adviser -> id }}">
 						<img class="rounded-lg object-cover w-full" src="{{ asset('/adviser_images/'.$picture) }}" style="max-height:250px;" />
 					</a>
+					@else
+					<img class="rounded-lg object-cover w-full" src="{{ asset('/adviser_images/'.$picture) }}" style="max-height:250px;" />
+					@endauth
+
 				<?php } ?>
 
 				<br>
