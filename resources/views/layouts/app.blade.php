@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/slideshow.css">
 
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 
     <link rel="icon" href="/uc_citcs_logo.png">
@@ -129,8 +128,6 @@
 
     <script type="text/javascript" src="/js/slideshow-auto.js"></script>
     <script type="text/javascript" src="/js/slideshow.js"></script>
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
 
     <script type="text/javascript">
         $(document).ready(function() {

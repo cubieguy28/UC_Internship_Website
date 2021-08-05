@@ -73,7 +73,7 @@
 			</div>
 
 			<div class="mb-4">
-				<label class="block text-gray-700 text-sm font-bold mb-2" for="event_filename">Choose your image</label>
+				<label class="block text-gray-700 text-sm font-bold mb-2" for="event_filename">Choose your images (Maximum: 5MB per Image)</label>
 				<input type="file" class="w-full text-gray-700 px-3 py-2 border rounded" id="event_filename[]" name="event_filename[]" multiple="multiple" required>
 			</div>
 

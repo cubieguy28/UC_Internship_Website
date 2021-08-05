@@ -74,7 +74,7 @@ class EventController extends Controller
             'event_time',
             'event_participant',
             'event_filename' => 'required',
-            'event_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
+            'event_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:5048'
         ]);
 
         $Upload_model = new Event;
@@ -150,7 +150,7 @@ class EventController extends Controller
 
         $this->validate($request, [
             'event_filename' => 'required',
-            'event_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
+            'event_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:5048'
         ]);
 
         $Upload_model = Event::find($event->id);

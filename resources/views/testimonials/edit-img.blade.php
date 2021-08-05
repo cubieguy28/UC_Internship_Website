@@ -6,7 +6,7 @@
 
 	<div class="w-full max-w-xs">
 
-		<h1 class="text-3xl font-bold tracking-wider text-center mb-2" style="color: #003d13; font-variant: small-caps;">Change Image</h1>
+		<h1 class="text-3xl font-bold tracking-wider text-center mb-2" style="color: #003d13; font-variant: small-caps;">Change Image (Maximum: 5MB)</h1>
 
 		<form action="/testimonials/img/{{ $testimonial->id }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" enctype="multipart/form-data">
 			@method("PUT")

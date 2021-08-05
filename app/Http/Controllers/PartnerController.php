@@ -40,7 +40,7 @@ class PartnerController extends Controller
             'partner_tagline',
             'partner_link',
             'partner_filename' => 'required',
-            'partner_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
+            'partner_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:5048'
 
         ]);
 
@@ -117,7 +117,7 @@ class PartnerController extends Controller
     {
         $this->validate($request, [
             'partner_filename' => 'required',
-            'partner_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:3048'
+            'partner_filename.*' => 'image|mimes:jpeg,png,jpg,svg|max:5048'
 
         ]);
 
