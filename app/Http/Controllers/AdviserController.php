@@ -10,7 +10,7 @@ class AdviserController extends Controller
 {
     public function index()
     {
-        $advisers = Adviser::paginate(6);
+        $advisers = Adviser::paginate(5);
         return view('advisers.index', compact('advisers'));
     }
 
@@ -83,7 +83,7 @@ class AdviserController extends Controller
 
         $Upload_model->update();
         
-        return redirect('/advisers/'.$adviser->id);
+        return redirect('/advisers/');
     }   
 
     public function updateImg(Request $request, Adviser $adviser)
@@ -117,7 +117,7 @@ class AdviserController extends Controller
         $Upload_model->adviser_filename = json_encode($data);
         $Upload_model->update();
         
-        return redirect('/advisers/'.$adviser->id);
+        return redirect('/advisers/');
     }  
 
     public function destroy(Adviser $adviser)

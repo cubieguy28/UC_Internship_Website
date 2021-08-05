@@ -24,7 +24,7 @@
 	@endauth
 
 	<div class="flex justify-around items-center bg-black shadow-lg">
-		<a class="prev hover:bg-gray-700" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="prev hover:bg-gray-700 h-screen flex items-center" onclick="plusSlides(-1)">&#10094;</a>
 
 		<div class="slideshow-container">
 
@@ -39,7 +39,7 @@
 
 		</div>
 
-		<a class="next hover:bg-gray-700" onclick="plusSlides(1)">&#10095;</a>
+		<a class="next hover:bg-gray-700 h-screen flex items-center" onclick="plusSlides(1)">&#10095;</a>
 	</div>
 
 	<div class="mt-4 p-5">
@@ -49,7 +49,7 @@
 
 		<h1 class="text-xs italic tracking-wider text-center">{{ \Carbon\Carbon::parse($event->event_date)->format('M d, Y') }}@if($event->event_time) | {{\Carbon\Carbon::createFromFormat('H:i:s',$event->event_time)->format('h:i A')}}@endif</h1>
 
-		<div class="font-bold text-left px-24 flex justify-between mt-44">
+		<div class="font-bold text-left px-24 flex justify-between mt-32">
 			<div class="w-3/4">
 				<h1 class="italic text-3xl">About this event:</h1>
 				<p class="">{{ $event->event_description }}</p>

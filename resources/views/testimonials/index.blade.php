@@ -4,7 +4,7 @@
 
 <div class="p-5">
 
-	<h1 class="text-3xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13; font-variant: small-caps;">Alumni Testimonials</h1>
+	<h1 class="text-5xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13; font-variant: small-caps;">Alumni Testimonials</h1>
 
 	@auth
 
@@ -12,7 +12,7 @@
 
 	@endauth
 
-	<div class="flex grid gap-10 grid-cols-2 px-24" style="color: #003d13;">
+	<div class="flex flex-wrap justify-around px-24" style="color: #003d13;">
 
 		@if (count($testimonials) == 0)
 

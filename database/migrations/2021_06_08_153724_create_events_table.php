@@ -15,7 +15,7 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->string('event_name', 50);
+            $table->string('event_name', 100);
             $table->date('event_date');
             $table->text('event_description');
             $table->string('event_speaker_fname', 20);
@@ -23,7 +23,7 @@ class CreateEventsTable extends Migration
             $table->string('event_category', 20);
             $table->time('event_time')->nullable();
             $table->integer('event_participant')->nullable();
-            $table->string('event_filename', 10000);   
+            $table->string('event_filename', 16000);   
             $table->integer('image_counter');
             $table->timestamps();
         });

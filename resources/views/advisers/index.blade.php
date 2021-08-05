@@ -4,7 +4,7 @@
 
 <div class="p-5">
 
-	<h1 class="text-3xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13; font-variant: small-caps;">About</h1>
+	<h1 class="text-5xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13; font-variant: small-caps;">About</h1>
 
 	@auth
 
@@ -59,7 +59,7 @@
 	<h1 class="text-3xl italic font-bold tracking-wider my-10 text-center" style="color: #003d13;">INTERNSHIP ADVISERS</h1>
 
 
-	<div class="flex grid gap-10 grid-cols-3 px-24" style="color: #003d13;">
+	<div class="flex flex-wrap justify-around px-24" style="color: #003d13;">
 
 		@if (count($advisers) == 0)
 
@@ -69,12 +69,12 @@
 
 		@foreach($advisers as $adviser)
 
-		<div class="rounded-lg p-10 flex text-center grid justify-items-center border-2 border-black shadow-lg">
-			<div class="grid justify-items-center">
+		<div class="rounded-lg p-10 text-center border-2 border-black shadow-lg mb-10">
+			<div class="">
 
 				<?php foreach (json_decode($adviser->adviser_filename) as $picture) { ?>
 					<a href="/advisers/{{ $adviser -> id }}">
-						<img class="rounded-lg object-cover w-full" src="{{ asset('/adviser_images/'.$picture) }}" style="max-height:250px; max-width:250px" />
+						<img class="rounded-lg object-cover w-full" src="{{ asset('/adviser_images/'.$picture) }}" style="max-height:250px;" />
 					</a>
 				<?php } ?>
 

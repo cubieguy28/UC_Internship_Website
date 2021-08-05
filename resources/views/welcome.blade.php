@@ -9,7 +9,7 @@
 
 <!-- LATEST EVENTS -->
 <div class="w-full h-auto bg-white p-24">
-    <h1 class="text-3xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13; font-variant: small-caps;">Latest Events</h1>
+    <h1 class="text-5xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13; font-variant: small-caps;">Latest Events</h1>
 
     <div class="flex items-center grid gap-4 grid-cols-4 mb-16" style="color: #003d13;">
 
@@ -91,8 +91,8 @@
         </div>
         <!-- Slideshow end -->
     </div>
-    <div class="text-white font-bold tracking-widest p-20 w-1/2">
-        <h1 class="text-3xl italic" style="font-variant: small-caps;">Internships With A Purpose</h1>
+    <div class="text-white font-bold tracking-widest p-10 w-1/2">
+        <h1 class="text-5xl italic" style="font-variant: small-caps;">Internships With A Purpose</h1>
         <br>
         <br>
         <p class="">
@@ -110,7 +110,7 @@
 <div class="w-full h-auto bg-white flex justify-around">
 
     <div class="p-20 w-1/3 font-bold tracking-widest" style="color: #003d13;">
-        <h1 class="text-3xl">WORKING WITH THE BEST PARTNERS</h1>
+        <h1 class="text-5xl">WORKING WITH THE BEST PARTNERS</h1>
         <br>
         <br>
         <p class="">

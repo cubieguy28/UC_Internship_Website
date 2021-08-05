@@ -114,13 +114,13 @@
             <p class="font-bold mb-2 italic">UNIVERSITY OF THE CORDILLERAS</p>
             <ul class="text-sm font-semibold">
                 <li class="mb-2">
-                    <a href="https://www.uc-bcf.edu.ph/">Official Website</a>
+                    <a target="_blank" href="https://www.uc-bcf.edu.ph/">Official Website</a>
                 </li>
                 <li class="mb-2">
-                    <a href="https://www.linkedin.com/school/university-of-the-cordilleras/">LinkedIn</a>
+                    <a target="_blank" href="https://www.linkedin.com/school/university-of-the-cordilleras/">LinkedIn</a>
                 </li>
                 <li class="mb-2">
-                    <a href="https://www.facebook.com/UCjaguars">Facebook</a>
+                    <a target="_blank" href="https://www.facebook.com/UCjaguars">Facebook</a>
                 </li>
             </ul>
         </div>

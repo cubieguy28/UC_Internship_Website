@@ -4,7 +4,7 @@
 
 <div class="p-5">
 
-  <h1 class="text-3xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13; font-variant: small-caps;">Activities</h1>
+  <h1 class="text-5xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13; font-variant: small-caps;">Activities</h1>
 
   @auth
 
