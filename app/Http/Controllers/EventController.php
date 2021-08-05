@@ -9,16 +9,16 @@ use Illuminate\Support\Facades\File;
 class EventController extends Controller
 {
 
-    public function indexWelcome()
-    {
-        $events = Event::orderBy('event_date', 'desc')->paginate(4);
-        return view('welcome', compact('events'));
-    }
-
     public function index()
     {        
         $events = Event::orderBy('event_date', 'desc')->paginate(12);
         return view('events.index', compact('events'));
+    }
+
+    public function indexWelcome()
+    {
+        $events = Event::orderBy('event_date', 'desc')->paginate(4);
+        return view('welcome', compact('events'));
     }
 
     public function search(Request $request)
