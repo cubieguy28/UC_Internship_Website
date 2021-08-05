@@ -18,8 +18,8 @@ class CreateEventsTable extends Migration
             $table->string('event_name', 100);
             $table->date('event_date');
             $table->text('event_description');
-            $table->string('event_speaker_fname', 20);
-            $table->string('event_speaker_lname', 20);
+            $table->string('event_speaker_fname', 20)->nullable();
+            $table->string('event_speaker_lname', 20)->nullable();
             $table->string('event_category', 20);
             $table->time('event_time')->nullable();
             $table->integer('event_participant')->nullable();

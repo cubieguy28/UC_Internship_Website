@@ -28,16 +28,16 @@
 
 			<div class="mb-4">
 				<label class="block text-gray-700 text-sm font-bold mb-2" for="event_speaker_fname">
-					Event Speaker First Name
+					Event Speaker First Name (Optional)
 				</label>
-				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="event_speaker_fname" name="event_speaker_fname" type="text" placeholder="Event Speaker First Name" required>
+				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="event_speaker_fname" name="event_speaker_fname" type="text" placeholder="Event Speaker First Name">
 			</div>
 
 			<div class="mb-4">
 				<label class="block text-gray-700 text-sm font-bold mb-2" for="event_speaker_lname">
-					Event Speaker Last Name
+					Event Speaker Last Name (Optional)
 				</label>
-				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="event_speaker_lname" name="event_speaker_lname" type="text" placeholder="Event Speaker Last Name" required>
+				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="event_speaker_lname" name="event_speaker_lname" type="text" placeholder="Event Speaker Last Name">
 			</div>
 
 			<div class="mb-4">

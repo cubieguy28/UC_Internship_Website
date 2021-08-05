@@ -92,8 +92,10 @@
 				<p class="">{{ $event->event_description }}</p>
 			</div>
 			<div>
+				@if($event->event_speaker_fname || $event->event_speaker_lname)
 				<h1 class="italic text-xl">Speaker of this event:</h1>
 				<p>{{ $event->event_speaker_fname }} {{ $event->event_speaker_lname }}</p>
+				@endif
 				<br>
 				@if($event->event_participant)
 				<h1 class="italic text-xl">No. of Participants:</h1>
