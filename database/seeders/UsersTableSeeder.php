@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
             // 'name' => 'admin',
             'email' => 'admin@email.com',
             // 'username' => 'uc_admin2021',
-            'password' => bcrypt('ADJMV_internship'),
+            'password' => bcrypt(''),
         ]);
     }
 }
