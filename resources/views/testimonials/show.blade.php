@@ -63,6 +63,9 @@
 
 	@endauth
 
+	<h1 class="text-5xl italic font-bold tracking-wider text-center" style="color: #003d13; font-variant: small-caps;">{{ $testimonial->testimonial_fname }} {{ $testimonial->testimonial_lname }}'s Testimonial</h1>
+	<h1 class="text-2xl italic tracking-wider mb-16 text-center" style="color: #003d13;">{{ $testimonial->testimonial_title }}</h1>
+
 	<div class="flex grid gap-4 grid-cols-2 rounded-lg p-3" style="color: #003d13; ">
 		<div class="flex text-center grid justify-items-center">
 			<?php foreach (json_decode($testimonial->testimonial_filename) as $picture) { ?>
@@ -71,17 +74,16 @@
 
 			<br>
 
-			<div class="rounded-lg p-2 px-32 text-white font-bold" style="background-color: #003d13;">
-				<h1>{{ $testimonial->testimonial_fname }} {{ $testimonial->testimonial_lname }}</h1>
-				<h1 class="text-sm font-normal">{{ $testimonial->testimonial_title }}</h1>
-			</div>
-
 		</div>
 
 		<div class="box3 sb14">
-			<h1>{{ $testimonial->testimonial_testimony }} @if(!in_array("null", json_decode($testimonial->testimonial_video)))<a href="/testimonials/vid/{{ $testimonial -> id }}" class="text-sm font-bold italic">Watch {{ $testimonial->testimonial_fname }}'s video</a>@endif</h1>
+			<h1>{{ $testimonial->testimonial_testimony }}</h1>
 		</div>
 
+	</div>
+
+	<div class="text-right mt-4 mr-4">
+		@if(!in_array("null", json_decode($testimonial->testimonial_video)))<a class="bg-green-700 text-white hover:bg-green-900 p-2 rounded-lg font-bold" href="/testimonials/vid/{{ $testimonial -> id }}" class="text-sm font-bold italic">Watch {{ $testimonial->testimonial_fname }}'s video</a>@endif
 	</div>
 				
 </div>
