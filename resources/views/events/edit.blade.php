@@ -62,12 +62,12 @@
 			</div>
 
 			<div class="mb-4">
-				<label class="block text-gray-700 text-sm font-bold mb-2" for="event_time">Event Time</label>
+				<label class="block text-gray-700 text-sm font-bold mb-2" for="event_time">Event Time (Optional)</label>
 				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="time" id="event_time" name="event_time" value="{{ $event->event_time }}">
 			</div>
 
 			<div class="mb-4">
-				<label class="block text-gray-700 text-sm font-bold mb-2" for="event_participant">Event Participants</label>
+				<label class="block text-gray-700 text-sm font-bold mb-2" for="event_participant">Event Participants (Optional)</label>
 				<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" id="event_participant" name="event_participant" value="{{ $event->event_participant }}">
 			</div>
 

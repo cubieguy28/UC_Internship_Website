@@ -43,7 +43,7 @@
 							{{ \Illuminate\Support\Str::limit($partner->partner_description, 200, $end='...') }}
 						</p>
 
-						<a href="/partners/{{ $partner -> id }}" onclick="myFunctionRead()" id="myBtn" class="text-xs italic">Read more</a>
+						<a target="_blank" href="/partners/{{ $partner -> id }}" onclick="myFunctionRead()" id="myBtn" class="text-xs italic">Read more</a>
 
 					</div>
 

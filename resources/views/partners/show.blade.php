@@ -96,7 +96,7 @@
 		@if($partner->partner_link)
 		<div>
 			
-			<p class="text-center text-gray-500">Visit our website at <a href="" class="text-center font-bold text-black">{{ $partner->partner_link }}</a></p>
+			<p class="text-center text-gray-500">Visit our website at <a target="_blank" href="{{ $partner->partner_link }}" class="text-center font-bold text-black">{{ $partner->partner_link }}</a></p>
 			
 		</div>
 		@endif

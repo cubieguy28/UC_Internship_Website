@@ -119,7 +119,7 @@
             @endif
 
           </div>
-          <a href="/events/{{ $event -> id }}">
+          <a target="_blank" href="/events/{{ $event -> id }}">
             <?php foreach (json_decode($event->event_filename) as $picture) { ?>
 
               <div class="flex justify-center">

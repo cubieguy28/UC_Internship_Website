@@ -45,7 +45,7 @@
 			</div>
 
 			<div class="mb-4">
-				<label class="block text-gray-700 text-sm font-bold mb-2" for="testimonial_filename">Choose your image</label>
+				<label class="block text-gray-700 text-sm font-bold mb-2" for="testimonial_filename">Choose your image (Maximum: 5MB)</label>
 				<input type="file" class="w-full text-gray-700 px-3 py-2 border rounded" id="testimonial_filename[]" name="testimonial_filename[]" required>
 			</div>
 
