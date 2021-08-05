@@ -17,8 +17,9 @@ class EventController extends Controller
 
     public function indexWelcome()
     {
-        $events = Event::orderBy('event_date', 'desc')->limit(4)->get();
-        return view('welcome', compact('events'));
+        // $events = Event::orderBy('event_date', 'desc')->limit(4)->get();
+        // return view('welcome', compact('events'));
+        return view('welcome');
     }
 
     public function search(Request $request)
