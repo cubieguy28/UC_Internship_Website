@@ -20,6 +20,12 @@ class TestimonialController extends Controller
         return view('testimonials.show', compact('testimonial'));
     }
 
+    public function showVideo(Testimonial $testimonial)
+    {
+        
+        return view('testimonials.show-video', compact('testimonial'));
+    }
+
     public function create()
     {
         return view('testimonials.create');

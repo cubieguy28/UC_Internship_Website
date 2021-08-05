@@ -53,6 +53,7 @@ Route::delete('/partners/{partner}', 'PartnerController@destroy');
 Route::get('/testimonials', 'TestimonialController@index');
 Route::get('/testimonials/create', 'TestimonialController@create');
 Route::get('/testimonials/{testimonial}', 'TestimonialController@show');
+Route::get('/testimonials/vid/{testimonial}', 'TestimonialController@showVideo');
 Route::post('/testimonials', 'TestimonialController@store');
 Route::get('/testimonials/{testimonial}/edit', 'TestimonialController@edit');
 Route::get('/testimonials/img/{testimonial}/edit', 'TestimonialController@editImg');

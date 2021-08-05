@@ -48,7 +48,6 @@
 		        <div class="flex justify-end pt-2">
 		          <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline mr-4" type="submit">DELETE
 					</button>
-		          <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400 font-bold">CLOSE</button>
 		        </div>
 		        
 		      </div>
