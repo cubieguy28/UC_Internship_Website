@@ -15,13 +15,6 @@ class LoginController extends Controller
 
     public function index()
     {
-        // $count = \DB::table('users')->count();
-
-        // if($count > 0) {
-        //      abort(404);
-        // }else {
-        //      return view('auth.login');
-        // }
         return view('auth.login');
         
     }
@@ -37,6 +30,6 @@ class LoginController extends Controller
             return back()->with('status', 'Invalid login details');
         }
 
-        return redirect('/');
+        return redirect('http://~~~/');
     }
 }
