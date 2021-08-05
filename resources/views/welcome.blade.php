@@ -11,7 +11,7 @@
 <div class="w-full h-auto bg-white p-24">
     <h1 class="text-5xl italic font-bold tracking-wider mb-16 text-center" style="color: #003d13; font-variant: small-caps;">Latest Events</h1>
 
-    <!-- <div class="flex items-center grid gap-4 grid-cols-4 mb-16" style="color: #003d13;"> -->
+    <div class="flex items-center grid gap-4 grid-cols-4 mb-16" style="color: #003d13;">
 
         @foreach($events as $event)
 
@@ -59,7 +59,7 @@
         @endforeach
     </div>
 
-    <div class=" flex justify-center">
+    <div class="flex justify-center">
         <a href="/events">
             <button class="rounded-lg p-2 px-6 text-white font-bold" style="background-color: #003d13;">
                 VIEW GALLERY
