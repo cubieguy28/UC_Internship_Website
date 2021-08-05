@@ -16,7 +16,6 @@
 
         <form action="{{ route('login') }}" method="post">
             @csrf
-            {{ csrf_token() }}
 
             <div class="mb-4">
                 <label for="email" class="sr-only">Email</label>
