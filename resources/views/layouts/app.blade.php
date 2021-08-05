@@ -16,7 +16,6 @@
     <title>UC | CITCS Internship Album</title>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
     <style>
         .modal {
@@ -138,27 +137,6 @@
             $("body").on("click", ".btn-danger", function() {
                 $(this).parents(".control-group").remove();
             });
-        });
-    </script>
-
-    <!-- FOR DELETE CONFIRMATION -->
-    <script type="text/javascript">
-        $('.delete-confirm').click(function(e) {
-            var form = $(this).closest("form");
-            var name = $(this).data("name");
-            e.preventDefault();
-            swal({
-                    title: `Are you sure you want to delete this data?`,
-                    text: "If you delete this, it will be gone forever.",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        form.submit();
-                    }
-                });
         });
     </script>
 
