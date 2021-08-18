@@ -73,6 +73,9 @@
             <option class="py-1">Interviews</option>
             <option class="py-1">Meetings</option>
             <option class="py-1">Orientations</option>
+            <option class="py-1">Programs</option>
+            <option class="py-1">Recruitments</option>
+            <option class="py-1">Revalida-Recognition</option>
             <option class="py-1">Seminar-Workshop</option>
             <option class="py-1">Talks</option>
             <option class="py-1">Trainings</option>

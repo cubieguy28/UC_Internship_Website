@@ -58,8 +58,7 @@
 
 	@endauth
 
-
-	<div class="flex flex-wrap justify-around px-24" style="color: #003d13;">
+	<div class="flex flex-wrap justify-around px-64" style="color: #003d13;">
 
 		@if (count($advisers) == 0)
 
@@ -70,16 +69,17 @@
 		@foreach($advisers as $adviser)
 
 		
-		<div class="rounded-lg p-10 pt-12 text-center border-2 border-black shadow-lg mb-10" style="width:33.34%;">
+		<div class="rounded-lg p-10 pt-12 text-center border-2 border-black shadow-lg mb-10 flex grid justify-items-center">
+			<div class="grid justify-items-center">
 			
 
 				<?php foreach (json_decode($adviser->adviser_filename) as $picture) { ?>
 					@auth
 					<a target="_blank" href="/advisers/{{ $adviser -> id }}">
-						<img class="rounded-lg object-cover w-full" src="{{ asset('/adviser_images/'.$picture) }}" style="max-height:250px;" />
+						<img class="rounded-lg object-cover w-full" src="{{ asset('/adviser_images/'.$picture) }}" style="max-height:300px; max-width: 300px;" />
 					</a>
 					@else
-					<img class="rounded-lg object-cover w-full" src="{{ asset('/adviser_images/'.$picture) }}" style="max-height:250px;" />
+					<img class="rounded-lg object-cover w-full" src="{{ asset('/adviser_images/'.$picture) }}" style="max-height:300px; max-width: 300px;" />
 					@endauth
 
 				<?php } ?>
@@ -91,7 +91,7 @@
 					<h1 class="text-sm font-normal">{{ $adviser->adviser_designation }}</h1>
 				</div>
 
-			
+			</div>
 		</div>
 
 		@endforeach

@@ -62,3 +62,26 @@ Route::put('/testimonials/{testimonial}', 'TestimonialController@update');
 Route::put('/testimonials/img/{testimonial}', 'TestimonialController@updateImg');
 Route::put('/testimonials/vid/{testimonial}', 'TestimonialController@updateVideo');
 Route::delete('/testimonials/{testimonial}', 'TestimonialController@destroy');
+
+//WEBINAR
+Route::get('/webinars', 'WebinarController@index');
+Route::get('/webinars/create', 'WebinarController@create');
+//no show
+Route::post('/webinars', 'WebinarController@store');
+Route::get('/webinars/{webinar}/edit', 'WebinarController@edit');
+Route::get('/webinars/img/{webinar}/edit', 'WebinarController@editImg');
+Route::put('/webinars/{webinar}', 'WebinarController@update');
+Route::put('/webinars/img/{webinar}', 'WebinarController@updateImg');
+Route::delete('/webinars/{webinar}', 'WebinarController@destroy');
+
+//BREAKOUT SESSIONS
+Route::get('/breakouts', 'BreakoutController@index');
+Route::get('/breakouts/create/', 'BreakoutController@create');
+//no show
+Route::post('/breakouts', 'BreakoutController@store');
+Route::get('/breakouts/{breakout}/edit', 'BreakoutController@edit');
+Route::get('/breakouts/img/{breakout}/edit', 'BreakoutController@editImg');
+Route::put('/breakouts/{breakout}', 'BreakoutController@update');
+Route::put('/breakouts/img/{breakout}', 'BreakoutController@updateImg');
+Route::delete('/breakouts/{breakout}', 'BreakoutController@destroy');
+

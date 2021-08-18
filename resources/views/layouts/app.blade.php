@@ -33,9 +33,15 @@
 <body class="flex flex-col min-h-screen" style='font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";'>
 
     <header>
-        <div class="w-full">
-            <img src="/citcs_header.jpg">
+        <div class="" style="background-image: url('/citcs_header.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    padding-top: 16.09%;">
+            <!-- <img src="/citcs_header.jpg"> -->
         </div>
+
 
         <nav class="p-2 bg-gray-100">
             <ul class="flex items-center text-sm font-semibold tracking-wider flex justify-around" style="color: #003d13;">
@@ -49,11 +55,15 @@
                     <a href="/partners" class="p-3">Industry Partners</a>
                 </li>
                 <li class="hover:bg-gray-200 p-1 rounded-lg">
-                    <a href="/events" class="p-3">Activities/Accomplishments</a>
+                    <a href="/events" class="p-3">Activities</a>
+                </li>
+                <li class="hover:bg-gray-200 p-1 rounded-lg">
+                    <a href="/webinars" class="p-3">Webinars</a>
                 </li>
                 <li class="hover:bg-gray-200 p-1 rounded-lg">
                     <a href="/testimonials" class="p-3">Alumni Testimonials</a>
                 </li>
+                
 
             </ul>
 

@@ -3,8 +3,14 @@
 @section('content')
 
 <!-- BODY -->
-<div class="w-full">
-    <img src="/body.JPG">
+<div class="" style=
+    "background-image: url('/body.JPG');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    padding-top: 38.34%;">
+    <!-- <img src="/body.JPG"> -->
 </div>
 
 <!-- LATEST EVENTS -->
